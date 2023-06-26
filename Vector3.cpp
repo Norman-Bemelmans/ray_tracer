@@ -68,5 +68,18 @@ double Vector3::length() const
 
 Vector3 Vector3::normalize()
 {
-    
+    const double inv_length = 1 / length();
+    return Vector3(x * inv_length, y * inv_length, z * inv_length);
+}
+
+double Vector3::dot_prod(Vector3 other)
+{
+    return x * other.x + y * other.y + z *other.z
+}
+
+Vector3 Vector3::cross_prod(Vector3 other)
+{
+    return Vector3(y * other.z - z * other.y,
+                   z * other.x - x * other.z,
+                   x * other.y - y * other.x);
 }
