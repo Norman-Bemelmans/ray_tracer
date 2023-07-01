@@ -42,12 +42,14 @@ Vector3& Vector3::operator*=(const double scalar)
 
 Vector3 Vector3::operator/(const double scalar) const
 {
-    return Vector3(x / scalar, y / scalar, z / scalar);
+    const double inv = 1 / scalar;
+    return Vector3(x * inv, y * inv, z * inv);
 }
 
 Vector3& Vector3::operator/=(const double scalar)
 {
-    x /= scalar; y /= scalar; z /= scalar;
+    const double inv = 1 / scalar;
+    x *= inv; y *= inv; z *= inv;
     return *this;
 }
 
@@ -72,12 +74,12 @@ Vector3 Vector3::normalize()
     return Vector3(x * invLen, y * invLen, z * invLen);
 }
 
-double Vector3::dot_prod(Vector3 other)
+double Vector3::dot(Vector3 other)
 {
-    return x * other.x + y * other.y + z *other.z;
+    return x * other.x + y * other.y + z * other.z;
 }
 
-Vector3 Vector3::cross_prod(Vector3 other)
+Vector3 Vector3::cross(Vector3 other)
 {
     return Vector3(y * other.z - z * other.y,
                    z * other.x - x * other.z,

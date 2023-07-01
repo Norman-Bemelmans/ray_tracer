@@ -32,8 +32,8 @@ public:
     double length() const;
 
     Vector3 normalize();
-    double dot_prod(Vector3 other);
-    Vector3 cross_prod(Vector3 other);
+    double dot(Vector3 other);
+    Vector3 cross(Vector3 other);
 };
 
 #endif
