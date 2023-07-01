@@ -22,3 +22,5 @@ public:
     Vector3 operator*(const Vector3& vec) const;
     Transform operator*(const Transform& t) const;
 };
+
+#endif

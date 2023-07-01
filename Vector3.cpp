@@ -57,9 +57,9 @@ Vector3 Vector3::operator-()
 }
 
 double Vector3::length_squared() const
-[
+{
     return x*x + y*y + z*z;
-]
+}
 
 double Vector3::length() const
 {
@@ -68,13 +68,13 @@ double Vector3::length() const
 
 Vector3 Vector3::normalize()
 {
-    const double inv_length = 1 / length();
-    return Vector3(x * inv_length, y * inv_length, z * inv_length);
+    const double invLen = 1 / length();
+    return Vector3(x * invLen, y * invLen, z * invLen);
 }
 
 double Vector3::dot_prod(Vector3 other)
 {
-    return x * other.x + y * other.y + z *other.z
+    return x * other.x + y * other.y + z *other.z;
 }
 
 Vector3 Vector3::cross_prod(Vector3 other)
