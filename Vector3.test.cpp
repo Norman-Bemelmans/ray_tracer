@@ -17,5 +17,6 @@ int main()
 {
     test_def_ctor();
     std::cout << "Vector3 class unit test successfully completed.\n";
+    std::cout << "Test of the test:\n"
     return 0;
 }
