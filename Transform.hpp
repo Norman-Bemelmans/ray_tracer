@@ -1,7 +1,7 @@
 //Transform header file
 
-#ifndef TRANSFORM_H
-#define TRANSFORM_H
+#ifndef TRANSFORM_HPP
+#define TRANSFORM_HPP
 
 // Including Vector3.h here because Vector3 must be declared in order to
 // declare the Transform*vector method. Perhaps this could be changed to

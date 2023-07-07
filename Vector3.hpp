@@ -1,8 +1,8 @@
 //Vector3.h
 //Vector3 implements a 3-vector for ray tracing.
 
-#ifndef VECTOR3_H
-#define VECTOR3_H
+#ifndef VECTOR3_HPP
+#define VECTOR3_HPP
 
 namespace RT {
     
