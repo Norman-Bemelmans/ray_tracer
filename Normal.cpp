@@ -79,9 +79,14 @@ namespace RT {
         return Normal(n.x * invLen, n.y * invLen, n.z * invLen);
     }
 
-    double dot (const Normal& n, const Vector3& v)
+    double dot(const Normal& n, const Vector3& v)
     {
             return n.x * v.x + n.y * v.y + n.z * v.z;
+    }
+
+    Normal operator*(double s, const Normal& n)
+    {
+        return n * s;
     }
 }
 

@@ -142,6 +142,15 @@ namespace RT {
             double l = dot( n, v );
             assert(l == 32.0);
         }
+
+        void test_mult2()
+        {
+            double s = 5.0;
+            Normal n(1.0,  2.0, 3.0);
+            assert((s*n).x == 5.0);
+            assert((s*n).y == 10.0);
+            assert((s*n).z == 15.0);
+        }
 }
 
 int main()
@@ -161,6 +170,7 @@ int main()
     RT::test_abs();
     RT::test_normalize();
     RT::test_dot();
+    RT::test_mult2();
 
     std::cout << "Normal class unit test successfully completed.\n";
     return 0;

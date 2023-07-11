@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "Vector3.hpp"
+
 namespace RT {
 
     void test_def_ctor()
@@ -157,6 +158,15 @@ namespace RT {
         assert((cross(w,v)).y == 6.0);
         assert((cross(w,v)).z == -3.0);
     }
+
+    void test_mult2()
+    {
+        double s = 2.0;
+        Vector3 v(1.0, 2.0, 3.0);
+        assert((s*v).x == 2.0);
+        assert((s*v).y == 4.0);
+        assert((s*v).z == 6.0);
+    }
 }
 
 int main()
@@ -178,6 +188,7 @@ int main()
     RT::test_normalize();
     RT::test_dot();
     RT::test_cross();
+    RT::test_mult2();
 
     std::cout << "Vector3 class unit test successfully completed.\n";
     return 0;

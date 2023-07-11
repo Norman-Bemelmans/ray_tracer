@@ -25,7 +25,6 @@ namespace RT {
         Normal operator-(const Normal& other) const;
         Normal& operator-=(const Normal& other);
 
-        // Multiplication of normal n and scalar s must be written n*s:
         Normal operator*(const double scalar) const;
         Normal& operator*=(const double scalar);
         Normal operator/(const double scalar) const;
@@ -38,6 +37,7 @@ namespace RT {
     Normal abs(const Normal& n);
     Normal normalize(const Normal& n);
     double dot (const Normal& n, const Vector3& v);
+    Normal operator*(double a, const Normal& n);
 }
 
 #endif

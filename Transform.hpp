@@ -1,4 +1,4 @@
-//Transform header file
+//Transform class header file.
 
 #ifndef TRANSFORM_HPP
 #define TRANSFORM_HPP
@@ -15,8 +15,6 @@ namespace RT {
         // The operator*() methods are declared as friends becasue they 
         // need access to Transform's private members.
         friend Transform inverse(const Transform& A);
-        friend Vector3 operator*(const Transform& A, const Vector3& v);
-        friend Transform operator*(const Transform& B, const Transform& A);
         friend void test_def_ctor();
         friend void test_ctor_sing();
         friend void test_ctor_gd();
@@ -34,13 +32,18 @@ namespace RT {
         Transform(double m00, double m01, double m02,
                   double m10, double m11, double m12,
                   double m20, double m21, double m22);
+
+        // Matrix multiplication is read from right to left; these operators
+        // compute (this*v), or this transformation applied to v.
+        Vector3 operator*(const Vector3& v);
+        Transform operator*(const Transform& A);
+        Point3 operator*(const Point3& p);
+        Ray operator*(const Ray& r);
     };
 
         // Transform non-member functions (they are friends
         // of the class though):
         Transform inverse(const Transform& m);
-        Vector3 operator*(const Transform& A, const Vector3& v);
-        Transform operator*(const Transform& B, const Transform& A);
 }
 
 #endif

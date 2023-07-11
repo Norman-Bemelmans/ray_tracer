@@ -20,7 +20,6 @@ namespace RT {
         Vector3 operator-(const Vector3& other) const;
         Vector3& operator-=(const Vector3& other);
 
-        // Multiplication of vector v and scalar s must be written v*s:
         Vector3 operator*(const double scalar) const;
         Vector3& operator*=(const double scalar);
         Vector3 operator/(const double scalar) const;
@@ -41,6 +40,7 @@ namespace RT {
     Vector3 normalize(const Vector3& vec);
     double dot(const Vector3& a, const Vector3& b);
     Vector3 cross(const Vector3& a, const Vector3& b);
+    Vector3 operator*(double scalar, const Vector3& vec);
 }
 
 #endif

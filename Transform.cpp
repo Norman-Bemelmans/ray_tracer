@@ -4,6 +4,8 @@
 
 #include "Transform.hpp"
 #include "Vector3.hpp"
+#include "Point3.hpp"
+#include "Ray.hpp"
 
 namespace RT {
 
@@ -35,8 +37,40 @@ namespace RT {
         }
     }
 
-// The multiplication methods are implemented as left-multiplication;
-// that is, Transform( B, A ) is the result of applying B to A.
+    Vector3 Transform::operator*(const Vector3& v)
+    {
+        double x = v.x, y = v.y, z = v.z;
+        return Vector3(m[0][0]*x + m[0][1]*y + m[0][2]*z,
+                       m[1][0]*x + m[1][1]*y + m[1][2]*z,
+                       m[2][0]*x + m[2][1]*y + m[2][2]*z);
+    }
+
+    Transform Transform::operator*(const Transform& A)
+    {
+        return Transform(m[0][0]*A.m[0][0] + m[0][1]*A.m[1][0] + m[0][2]*A.m[2][0],
+                         m[0][0]*A.m[0][1] + m[0][1]*A.m[1][1] + m[0][2]*A.m[2][1],
+                         m[0][0]*A.m[0][2] + m[0][1]*A.m[1][2] + m[0][2]*A.m[2][2],
+                         m[1][0]*A.m[0][0] + m[1][1]*A.m[1][0] + m[1][2]*A.m[2][0],
+                         m[1][0]*A.m[0][1] + m[1][1]*A.m[1][1] + m[1][2]*A.m[2][1],
+                         m[1][0]*A.m[0][2] + m[1][1]*A.m[1][2] + m[1][2]*A.m[2][2],
+                         m[2][0]*A.m[0][0] + m[2][1]*A.m[1][0] + m[2][2]*A.m[2][0],
+                         m[2][0]*A.m[0][1] + m[2][1]*A.m[1][1] + m[2][2]*A.m[2][1],
+                         m[2][0]*A.m[0][2] + m[2][1]*A.m[1][2] + m[2][2]*A.m[2][2]);
+    }
+
+    Point3 Transform::operator*(const Point3& p)
+    {
+        double x = p.x, y = p.y, z = p.z;
+        return Point3(m[0][0]*x + m[0][1]*y + m[0][2]*z,
+                      m[1][0]*x + m[1][1]*y + m[1][2]*z,
+                      m[2][0]*x + m[2][1]*y + m[2][2]*z);
+    }
+
+    Ray Transform::operator*(const Ray& r)
+    {
+
+    }
+
     Transform inverse(const Transform& A)
     {
         return Transform(A.invDet*(A.m[1][1]*A.m[2][2] - A.m[1][2]*A.m[2][1]),
@@ -48,25 +82,5 @@ namespace RT {
                          A.invDet*(A.m[1][0]*A.m[2][1] - A.m[1][1]*A.m[2][0]),
                          A.invDet*(A.m[0][1]*A.m[2][0] - A.m[0][0]*A.m[2][1]),
                          A.invDet*(A.m[0][0]*A.m[1][1] - A.m[0][1]*A.m[1][0]));
-    }
-
-    Vector3 operator*(const Transform& A, const Vector3& v)
-    {
-        return Vector3(A.m[0][0]*v.x + A.m[0][1]*v.y + A.m[0][2]*v.z,
-                       A.m[1][0]*v.x + A.m[1][1]*v.y + A.m[1][2]*v.z,
-                       A.m[2][0]*v.x + A.m[2][1]*v.y + A.m[2][2]*v.z);
-    }
-
-    Transform operator*(const Transform& B, const Transform& A)
-    {
-        return Transform(B.m[0][0]*A.m[0][0] + B.m[0][1]*A.m[1][0] + B.m[0][2]*A.m[2][0],
-                         B.m[0][0]*A.m[0][1] + B.m[0][1]*A.m[1][1] + B.m[0][2]*A.m[2][1],
-                         B.m[0][0]*A.m[0][2] + B.m[0][1]*A.m[1][2] + B.m[0][2]*A.m[2][2],
-                         B.m[1][0]*A.m[0][0] + B.m[1][1]*A.m[1][0] + B.m[1][2]*A.m[2][0],
-                         B.m[1][0]*A.m[0][1] + B.m[1][1]*A.m[1][1] + B.m[1][2]*A.m[2][1],
-                         B.m[1][0]*A.m[0][2] + B.m[1][1]*A.m[1][2] + B.m[1][2]*A.m[2][2],
-                         B.m[2][0]*A.m[0][0] + B.m[2][1]*A.m[1][0] + B.m[2][2]*A.m[2][0],
-                         B.m[2][0]*A.m[0][1] + B.m[2][1]*A.m[1][1] + B.m[2][2]*A.m[2][1],
-                         B.m[2][0]*A.m[0][2] + B.m[2][1]*A.m[1][2] + B.m[2][2]*A.m[2][2]);
     }
 }
