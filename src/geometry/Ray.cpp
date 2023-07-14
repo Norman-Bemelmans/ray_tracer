@@ -10,7 +10,7 @@ namespace RT {
     Ray::Ray(const Point3& o_init, const Vector3& d_init)
         : o(o_init), d(d_init) {}
 
-    Point3 Ray::operator()(double t)
+    Point3 Ray::operator()(float t)
     {
         return o + t * d;
     }

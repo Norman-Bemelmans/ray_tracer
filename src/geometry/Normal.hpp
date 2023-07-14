@@ -13,31 +13,31 @@ namespace RT {
     // transformed surface.)
     class Normal {
     public:
-        double x;
-        double y;
-        double z;
+        float x;
+        float y;
+        float z;
 
         Normal();
-        Normal(double x_init, double y_init, double z_init);
+        Normal(float x_init, float y_init, float z_init);
 
         Normal operator+(const Normal& other) const;
         Normal& operator+=(const Normal& other);
         Normal operator-(const Normal& other) const;
         Normal& operator-=(const Normal& other);
 
-        Normal operator*(const double scalar) const;
-        Normal& operator*=(const double scalar);
-        Normal operator/(const double scalar) const;
-        Normal& operator/=(const double scalar);
+        Normal operator*(const float scalar) const;
+        Normal& operator*=(const float scalar);
+        Normal operator/(const float scalar) const;
+        Normal& operator/=(const float scalar);
 
-        double length_squared() const;
-        double length() const;
+        float length_squared() const;
+        float length() const;
     };
 
     Normal abs(const Normal& n);
     Normal normalize(const Normal& n);
-    double dot (const Normal& n, const Vector3& v);
-    Normal operator*(double a, const Normal& n);
+    float dot (const Normal& n, const Vector3& v);
+    Normal operator*(float a, const Normal& n);
 }
 
 #endif

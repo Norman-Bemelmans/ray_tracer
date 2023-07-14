@@ -106,10 +106,11 @@ namespace RT {
 
     void test_negate()
     {
+        const double epsilon = 0.0001;
         Vector3 v(1.0, -3.2, 0.8);
-        assert(-v.x == -1.0);
-        assert(-v.y == 3.2);
-        assert(-v.z == -0.8);
+        assert(std::abs((-v).x + 1.0) < epsilon);
+        assert(std::abs((-v).y - 3.2) < epsilon);
+        assert(std::abs((-v).z + 0.8) < epsilon);
     }
 
     void test_len_sqrd()
@@ -126,11 +127,12 @@ namespace RT {
 
     void test_abs()
     {
+        double epsilon = 0.0001;
         Vector3 v(-1.2, 3.5, -0.8);
         Vector3 w = abs(v);
-        assert(w.x == 1.2);
-        assert(w.y == 3.5);
-        assert(w.z == 0.8);
+        assert(std::abs(w.x - 1.2) < epsilon);
+        assert(std::abs(w.y - 3.5) < epsilon);
+        assert(std::abs(w.z - 0.8) < epsilon);
     }
 
     void test_normalize()

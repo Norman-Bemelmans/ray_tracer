@@ -18,7 +18,7 @@ namespace RT {
 
         // Overloaded () operator provides the point on the ray
         // corresponding to a parameter value t:
-        Point3 operator()(double t);
+        Point3 operator()(float t);
     };
 }
 

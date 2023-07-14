@@ -9,12 +9,12 @@ namespace RT {
 
     class Point3 {
     public:
-        double x;
-        double y;
-        double z;
+        float x;
+        float y;
+        float z;
 
         Point3();
-        Point3(double x_init, double y_init, double z_init);
+        Point3(float x_init, float y_init, float z_init);
 
         Point3 operator+(const Vector3& v) const;
         Point3& operator+=(const Vector3& v);
@@ -23,8 +23,8 @@ namespace RT {
         Vector3 operator-(const Point3& p) const;
     };
 
-    double dist(const Point3& p1, const Point3& p2);
-    double squareDist(const Point3& p1, const Point3& p2);
+    float dist(const Point3& p1, const Point3& p2);
+    float squareDist(const Point3& p1, const Point3& p2);
 }
 
 #endif

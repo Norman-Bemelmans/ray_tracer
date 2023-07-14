@@ -67,11 +67,12 @@ namespace RT {
 
     void test_p_minus_p()
     {
+        const double epsilon = 0.0001;
         Point3 p1(2.0, 12.0, 5.0);
         Point3 p2(-6.2, 11.0, 28.0);
-        assert ((p1 - p2).x == 8.2);
-        assert ((p1 - p2).y == 1.0);
-        assert ((p1 - p2).z == -23.0);
+        assert (std::abs((p1 - p2).x - 8.2) < epsilon);
+        assert (std::abs((p1 - p2).y - 1.0) < epsilon);
+        assert (std::abs((p1 - p2).z + 23.0) < epsilon);
     }
 
     void test_dist()

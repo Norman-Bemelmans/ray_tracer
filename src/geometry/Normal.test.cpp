@@ -119,11 +119,12 @@ namespace RT {
 
         void test_abs()
         {
+            const double epsilon = 0.0001;
             Normal n(-1.2, 3.5, -0.8);
             Normal m = abs(n);
-            assert(m.x == 1.2);
-            assert(m.y == 3.5);
-            assert(m.z == 0.8);
+            assert(std::abs(m.x - 1.2) < epsilon);
+            assert(std::abs(m.y - 3.5) < epsilon);
+            assert(std::abs(m.z - 0.8) < epsilon);
         }
 
         void test_normalize()

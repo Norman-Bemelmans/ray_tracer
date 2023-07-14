@@ -8,28 +8,28 @@ namespace RT {
     
     class Vector3 {
     public:
-        double x;
-        double y;
-        double z;
+        float x;
+        float y;
+        float z;
 
         Vector3();
-        Vector3( double x_init, double y_init, double z_init);
+        Vector3( float x_init, float y_init, float z_init);
 
         Vector3 operator+(const Vector3& other) const;
         Vector3& operator+=(const Vector3& other);
         Vector3 operator-(const Vector3& other) const;
         Vector3& operator-=(const Vector3& other);
 
-        Vector3 operator*(const double scalar) const;
-        Vector3& operator*=(const double scalar);
-        Vector3 operator/(const double scalar) const;
-        Vector3& operator/=(const double scalar);
+        Vector3 operator*(const float scalar) const;
+        Vector3& operator*=(const float scalar);
+        Vector3 operator/(const float scalar) const;
+        Vector3& operator/=(const float scalar);
 
         // Unary '-' changes the sign of a vector:
         Vector3 operator-() const;
 
-        double length_squared() const;
-        double length() const;
+        float length_squared() const;
+        float length() const;
     };
 
     // These methods have been re-implemented as non-friend
@@ -38,9 +38,9 @@ namespace RT {
     // other types.)
     Vector3 abs(const Vector3& vec);
     Vector3 normalize(const Vector3& vec);
-    double dot(const Vector3& a, const Vector3& b);
+    float dot(const Vector3& a, const Vector3& b);
     Vector3 cross(const Vector3& a, const Vector3& b);
-    Vector3 operator*(double scalar, const Vector3& vec);
+    Vector3 operator*(float scalar, const Vector3& vec);
 }
 
 #endif
