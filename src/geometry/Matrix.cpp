@@ -81,7 +81,6 @@ namespace RT {
         float h = invDet*(m.m[0][1]*m.m[2][0] - m.m[0][0]*m.m[2][1]);
         float i = invDet*(m.m[0][0]*m.m[1][1] - m.m[0][1]*m.m[1][0]);
 
-        //float x = 
         float x = -(a*m.m[0][3] + b*m.m[1][3] + c*m.m[2][3]);
         float y = -(d*m.m[0][3] + e*m.m[1][3] + f*m.m[2][3]);
         float z = -(g*m.m[0][3] + h*m.m[1][3] + i*m.m[2][3]);

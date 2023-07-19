@@ -12,6 +12,6 @@ namespace RT {
 
     Point3 Ray::operator()(float t)
     {
-        return o + t * d;
+        return Point3(o + t * d);
     }
 }
