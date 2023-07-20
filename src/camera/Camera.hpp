@@ -23,5 +23,7 @@ namespace RT {
 
         // Coordinates for top, bottom, left, and right of image plane.
         float t, b, l, r;
+
+        
     };
 }
