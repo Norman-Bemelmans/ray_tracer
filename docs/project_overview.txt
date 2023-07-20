@@ -1,0 +1,123 @@
+Ray tracer project overview:
+
+Core modules:
+- Geometric Utilities: (e.g. vector, surface normal, transform, etc.)
+- Camera
+- Shape
+- Material
+- BRDF
+- Light
+- World
+- Hit_Record
+- RGB_Color
+- Film
+
+Geometric Utilities:
+These provide basic functionality like vector algebra and matrix multiplication.
+Currently implemented classes are Matrix, Normal, Point3, Ray, Transform, and Vector3.
+The Transform class comprises a matrix and its inverse. Vector3 supports basic operations
+(e.g. vector addition, scalar multiplication, normalization, dot product, and cross product.)
+The Normal class is very similar in implementation to Vector3 but there are a few key differences.
+You can't take the cross product of normals and special care must be taken in transforming
+normals. A normal must be transformed by the inverse transpose of the transformation used
+to transform an object if it is to remain a surface normal to the object after
+transformation. Point3 is also similar to Vector3. Points are used to represent locations
+in affine space; vectors represent the difference between points. A ray is composed of point
+(the ray origin) and a vector (the ray direction.)
+
+Camera:
+The camera contains all the information to render a scene given a world with objects and
+lights. A Camera instance contains an eye-point (viewing coordinate system origin), a
+view direction, the focal length, the image resolution, and the viewport coordinates of
+the image plane. It also provides a method to fire a ray into the scene.
+
+Shape:
+This class contains spheres, planes, triangles and other geometric objects for camera rays to 
+intersect. This should become a large inheritance structure comprising many types of
+objects, though at first I will just implement a few. The Shape class provides a hit()
+method and each derived class must provide a hit() method that implements a ray
+intersection test for its own unique geometry. Each instance of a Shape derived class
+also includes a pointer to a material. Shape instances contain a pointer to a transform 
+representing the object-to-world and its inverse.
+
+Material:
+The Material class is the basis for another inheritance structure, this time implementing
+shading functions. The base class provides the virtual method Shade(),and all derived
+classes must provide a Shade() method as well. Derived classes will often (but not
+always) include a pointer to a BRDF (to support more advanced reflection functions.)
+Many will also provide reflection coefficients (diffuse, specular, etc.) as a
+RGB_Color.
+
+BRDF:
+This class holds a BRDF. It contains the BRDF itself as well as the reflectance.
+I will not implement this at first; I will rely on Phong shading for the
+first iteration of the tracer.
+
+Light:
+These are trivial in this implementation, little more than a location
+in space. I will not implement radiance attenuation with distance
+at first unless its absence turns out to be unattractive. Only point
+lights just now, though I will support area lights later. Like the Shape class, 
+lights contain a pointer to the  transforms which situate it in world space.
+
+World:
+World is the data structure that contains all elements of the scene: the camera,
+the shapes, the lights, transformations, and the film. The shapes, transformations, 
+and lights are each stored in a vector of pointers. The world also
+contains an initialized camera instance and an instance of the film class, the latter
+of which stores the pixel values as a C-style array of RGB_Colors. For now, the world
+instance is initialized from a formatted text file.
+
+Hit_Record:
+This utility class carries information between the subsystems of the ray tracer.
+For a ray-object intersection, it records the associated hit point, material, and surface
+normal (IN WORLD COORDINATES!). The Hit_Record instance is then passed to the appropriate 
+Shade() method and it sums the radiance contribution from each light. Once complete, it 
+passes the pixel radiance value to the World's Film instance.
+
+RGB_Color:
+Simple 256 bit color. Supports addition and subtraction of pixel values. I'm hoping
+this will work in a variety of file formats for display on most screens.
+
+Film:
+Simple array of RGB_Colors with (horizontal image resolution)x(vertical image
+resolution) elements. The output file (PNG, JPG, etc.) is created from this
+representation.
+
+************************************************************************************************
+
+Principle of Operation:
+
+This program initializes a camera defined in 3D space, several lights and objects, 
+and a pixelated image plane at a fixed distance from the camera. After initialization, 
+the tracer runs the following loop:
+
+FOR each pixel(i,j) in image plane
+    fire ray from camera origin through pixel(i,j)
+    compute hit point of intesection with nearest object
+        FOR each light in World
+            pixel(i,j).radiance += Shade(hit point, light direction, camera direction)
+
+Coordinate Systems:
+A right-handed coordinate system is used throughout: by reference to a camera, 
+positive x points left, positive y points up, and positive z points in the view direction.
+
+The tracer uses the most natural coordinate system for each operation and liberally transforms
+between representations.
+
+Camera:
+Camera instances are defined in camera space, with the coordinate system as above. The ray to
+be fired into the scene is determined in camera space since this determination is simple: the 
+ray origin is the camera origin and the ray direction is (pixel center - camera origin). Prior 
+to intersection testing, this ray is transformed to world coordinates (via the camera-to-world 
+transformation).
+
+Shape:
+Likewise, shape instances are defined in shape space. The origin and coordiante systems will 
+differ between shapes but all will maximally use the native symmetry of the particular
+shape. Intersection testing is easiest in shape space,  so prior to testing for intersection 
+with a ray (given in world space) the ray is transformed with the world-to-shape transform.
+
+Light:
+Shading calculations are carried out in world space. This requires the light-to-object 
+direction, the camera view direction, and the hit point surface normal.

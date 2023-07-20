@@ -151,7 +151,7 @@ namespace RT {
         return Transform(m, mInv); 
    }
 
-   Transform look_dir(const Point3& pos, const Point3& look, const Vector3& up)
+   Transform cam_init(const Point3& pos, const Point3& look, const Vector3& up)
    {
         // view_dir computes the direction vector between the camera origin
         // and the object being viewed:

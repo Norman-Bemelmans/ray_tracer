@@ -572,6 +572,49 @@ namespace RT {
         assert(std::abs(t.mInv.m[3][2] - 0.0) < epsilon);
         assert(std::abs(t.mInv.m[3][3] - 1.0) < epsilon);
     }
+
+    void test_cam_init()
+    {
+        const float epsilon = 0.00001;
+        Point3 pos(1.0, 3.0, 5.0);
+        Point3 look(-3.0, 3.0, 5.0);
+        Vector3 up(0.0, 1.0, 0.0);
+        Transform t = cam_init(pos, look, up);
+
+        assert(std::abs(t.m.m[0][0] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[0][1] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[0][2] - 1.0) < epsilon);
+        assert(std::abs(t.m.m[0][3] + 5.0) < epsilon);
+        assert(std::abs(t.m.m[1][0] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[1][1] - 1.0) < epsilon);
+        assert(std::abs(t.m.m[1][2] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[1][3] + 3.0) < epsilon);
+        assert(std::abs(t.m.m[2][0] + 1.0) < epsilon);
+        assert(std::abs(t.m.m[2][1] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[2][2] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[2][3] - 1.0) < epsilon);
+        assert(std::abs(t.m.m[3][0] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[3][1] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[3][2] - 0.0) < epsilon);
+        assert(std::abs(t.m.m[3][3] - 1.0) < epsilon);
+
+        assert(std::abs(t.mInv.m[0][0] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[0][1] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[0][2] + 1.0) < epsilon);
+        assert(std::abs(t.mInv.m[0][3] - 1.0) < epsilon);
+        assert(std::abs(t.mInv.m[1][0] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[1][1] - 1.0) < epsilon);
+        assert(std::abs(t.mInv.m[1][2] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[1][3] - 3.0) < epsilon);
+        assert(std::abs(t.mInv.m[2][0] - 1.0) < epsilon);
+        assert(std::abs(t.mInv.m[2][1] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[2][2] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[2][3] - 5.0) < epsilon);
+        assert(std::abs(t.mInv.m[3][0] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[3][1] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[3][2] - 0.0) < epsilon);
+        assert(std::abs(t.mInv.m[3][3] - 1.0) < epsilon);
+    }
 }
 
 int main()
@@ -591,6 +634,7 @@ int main()
     RT::test_roty();
     RT::test_rotz();
     RT::test_translate();
+    RT::test_cam_init();
     std::cout << "Transform class unit test successfully completed.\n";
     return 0;
 }

@@ -35,6 +35,7 @@ namespace RT {
         friend void test_roty();
         friend void test_rotz();
         friend void test_translate();
+        friend void test_cam_init();
     private:
         Matrix m;
         Matrix mInv;
@@ -72,11 +73,11 @@ namespace RT {
     Transform rot_z(float theta);
     Transform translate(const Vector3& v);
 
-    // look_dir() orients the camera in world space: the difference between the
+    // cam_init() orients the camera in world space: the difference between the
     // first two parameters gives a vector between the camera and the object
     // to be looked at and the final parameter gives the up direction.
     // These data are sufficient to orient the camera in space.
-    Transform look_dir(const Point3& pos, const Point3& look, const Vector3& up);
+    Transform cam_init(const Point3& pos, const Point3& look, const Vector3& up);
 }
 
 #endif
