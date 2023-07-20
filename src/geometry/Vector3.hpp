@@ -1,4 +1,4 @@
-//Vector3.h
+//Vector3.hpp
 //Vector3 implements a 3-vector for ray tracing.
 
 #ifndef VECTOR3_HPP
