@@ -100,7 +100,7 @@ FOR each pixel(i,j) in image plane
 
 Coordinate Systems:
 A right-handed coordinate system is used throughout: by reference to a camera, 
-positive x points left, positive y points up, and positive z points in the view direction.
+positive x points right, positive y points down, and positive z points in the view direction.
 
 The tracer uses the most natural coordinate system for each operation and liberally transforms
 between representations.
