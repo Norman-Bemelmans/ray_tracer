@@ -151,7 +151,7 @@ namespace RT {
         return Transform(m, mInv); 
    }
 
-   Transform cam_init(const Point3& pos, const Point3& look, const Vector3& up)
+   Transform look_at(const Point3& pos, const Point3& look, const Vector3& up)
    {
         // view_dir computes the direction vector between the camera origin
         // and the object being viewed:
@@ -177,6 +177,6 @@ namespace RT {
         c2w.m[0][0] = left.x; c2w.m[1][0] = left.y;
         c2w.m[2][0] = left.z; c2w.m[3][0] = 0.0;
 
-        return Transform(RT::inverse(c2w), c2w);
+        return Transform(c2w, RT::inverse(c2w));
    }
 }
