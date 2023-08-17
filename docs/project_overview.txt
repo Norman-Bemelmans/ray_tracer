@@ -29,8 +29,8 @@ in affine space; vectors represent the difference between points. A ray is compo
 Camera:
 The camera contains all the information to render a scene given a world with objects and
 lights. A Camera instance contains an eye-point (viewing coordinate system origin), a
-view direction, the focal length, the image resolution, and the viewport coordinates of
-the image plane. It also provides a method to fire a ray into the scene.
+view direction, a Vector3 which points up, and the camera-to-world transformation. It 
+also provides the focal length of the camera.
 
 View_Plane:
 The World contains an instance of the View_Plane class. This stores the horizontal and 
