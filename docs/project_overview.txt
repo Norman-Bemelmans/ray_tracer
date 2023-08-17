@@ -3,6 +3,7 @@ Ray tracer project overview:
 Core modules:
 - Geometric Utilities: (e.g. vector, surface normal, transform, etc.)
 - Camera
+- View_Plane
 - Shape
 - Material
 - BRDF
@@ -31,14 +32,22 @@ lights. A Camera instance contains an eye-point (viewing coordinate system origi
 view direction, the focal length, the image resolution, and the viewport coordinates of
 the image plane. It also provides a method to fire a ray into the scene.
 
+View_Plane:
+The World contains an instance of the View_Plane class. This stores the horizontal and 
+vertical resolution of the screen as well as the coordinates for the top, bottom, left, 
+and right edges of the screen. These coordinates are used to generate the rays for 
+intersection testing.
+
 Shape:
 This class contains spheres, planes, triangles and other geometric objects for camera rays to 
 intersect. This should become a large inheritance structure comprising many types of
 objects, though at first I will just implement a few. The Shape class provides a hit()
 method and each derived class must provide a hit() method that implements a ray
 intersection test for its own unique geometry. Each instance of a Shape derived class
-also includes a pointer to a material. Shape instances contain a pointer to a transform 
-representing the object-to-world and its inverse.
+also includes a pointer to a material. Shape instances contain a transform 
+representing the object-to-world and its inverse. I may cache Transforms in a hashmap 
+and include a pointer to a Transform as Class data if memory becomes a bottleneck ( I think 
+that will only happen for huge scenes.)
 
 Material:
 The Material class is the basis for another inheritance structure, this time implementing
