@@ -1,6 +1,9 @@
 // Camera class implementation
 
 #include "Camera.hpp"
+#include "Point3.hpp"
+#include "Vector3.hpp"
+#include "Transform.hpp"
 
 namespace RT {
 
@@ -10,8 +13,11 @@ namespace RT {
                            0.0, 0.0, 1.0, 0.0,
                            0.0, 0.0, 0.0, 1.0) {}
 
-    Camera::Camera(Point3 ep, Point3 vd, Vector3 up) : eye_point(ep), view_dir(vd), up(up)
+    Camera::Camera(Point3 ep, Point3 vd, Vector3 up)
     {
-        c2w = look_at(ep, vd, up)
+        ep = ep;
+        vd = vd;
+        up = up;
+        c2w = look_at(ep, vd, up);
     }
 }

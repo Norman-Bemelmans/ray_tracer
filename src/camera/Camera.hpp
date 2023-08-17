@@ -10,6 +10,7 @@
 namespace RT {
 
     class Camera {
+        friend void test_def_ctor();
     private:
         // eye-point is  the camera origin.
         Point3 ep;

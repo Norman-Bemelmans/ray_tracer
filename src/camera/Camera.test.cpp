@@ -26,23 +26,23 @@ namespace RT {
         assert(std::abs(c.up.y + 1.0) < epsilon);
         assert(std::abs(c.up.z - 0.0) < epsilon);
 
-        assert(c.c2w.m[0][0] == 1.0); assert(c.c2w.m[0][1] == 0.0);
-        assert(c.c2w.m[0][2] == 0.0); assert(c.c2w.m[0][3] == 0.0);
-        assert(c.c2w.m[1][0] == 0.0); assert(c.c2w.m[1][1] == 1.0);
-        assert(c.c2w.m[1][2] == 0.0); assert(c.c2w.m[1][3] == 0.0);
-        assert(c.c2w.m[2][0] == 0.0); assert(c.c2w.m[2][1] == 0.0);
-        assert(c.c2w.m[2][2] == 1.0); assert(c.c2w.m[2][3] == 0.0);
-        assert(c.c2w.m[3][0] == 0.0); assert(c.c2w.m[3][1] == 0.0);
-        assert(c.c2w.m[3][2] == 0.0); assert(c.c2w.m[3][3] == 1.0);
+        assert(c.c2w.m.m[0][0] == 1.0); assert(c.c2w.m.m[0][1] == 0.0);
+        assert(c.c2w.m.m[0][2] == 0.0); assert(c.c2w.m.m[0][3] == 0.0);
+        assert(c.c2w.m.m[1][0] == 0.0); assert(c.c2w.m.m[1][1] == 1.0);
+        assert(c.c2w.m.m[1][2] == 0.0); assert(c.c2w.m.m[1][3] == 0.0);
+        assert(c.c2w.m.m[2][0] == 0.0); assert(c.c2w.m.m[2][1] == 0.0);
+        assert(c.c2w.m.m[2][2] == 1.0); assert(c.c2w.m.m[2][3] == 0.0);
+        assert(c.c2w.m.m[3][0] == 0.0); assert(c.c2w.m.m[3][1] == 0.0);
+        assert(c.c2w.m.m[3][2] == 0.0); assert(c.c2w.m.m[3][3] == 1.0);
 
-        assert(c.c2w.mInv[0][0] == 1.0); assert(c.c2w.mInv[0][1] == 0.0);
-        assert(c.c2w.mInv[0][2] == 0.0); assert(c.c2w.mInv[0][3] == 0.0);
-        assert(c.c2w.mInv[1][0] == 0.0); assert(c.c2w.mInv[1][1] == 1.0);
-        assert(c.c2w.mInv[1][2] == 0.0); assert(c.c2w.mInv[1][3] == 0.0);
-        assert(c.c2w.mInv[2][0] == 0.0); assert(c.c2w.mInv[2][1] == 0.0);
-        assert(c.c2w.mInv[2][2] == 1.0); assert(c.c2w.mInv[2][3] == 0.0);
-        assert(c.c2w.mInv[3][0] == 0.0); assert(c.c2w.mInv[3][1] == 0.0);
-        assert(c.c2w.mInv[3][2] == 0.0); assert(c.c2w.mInv[3][3] == 1.0);
+        assert(c.c2w.mInv.m[0][0] == 1.0); assert(c.c2w.mInv.m[0][1] == 0.0);
+        assert(c.c2w.mInv.m[0][2] == 0.0); assert(c.c2w.mInv.m[0][3] == 0.0);
+        assert(c.c2w.mInv.m[1][0] == 0.0); assert(c.c2w.mInv.m[1][1] == 1.0);
+        assert(c.c2w.mInv.m[1][2] == 0.0); assert(c.c2w.mInv.m[1][3] == 0.0);
+        assert(c.c2w.mInv.m[2][0] == 0.0); assert(c.c2w.mInv.m[2][1] == 0.0);
+        assert(c.c2w.mInv.m[2][2] == 1.0); assert(c.c2w.mInv.m[2][3] == 0.0);
+        assert(c.c2w.mInv.m[3][0] == 0.0); assert(c.c2w.mInv.m[3][1] == 0.0);
+        assert(c.c2w.mInv.m[3][2] == 0.0); assert(c.c2w.mInv.m[3][3] == 1.0);
     }
 }
 
