@@ -123,8 +123,8 @@ transformation).
 
 Shape:
 Likewise, shape instances are defined in shape space. The origin and coordiante systems will 
-differ between shapes but all will maximally use the native symmetry of the particular
-shape. Intersection testing is easiest in shape space,  so prior to testing for intersection 
+differ between shapes but all will use the native symmetry of the particular
+shape. Intersection testing is easiest in shape space, so prior to testing for intersection 
 with a ray (given in world space) the ray is transformed with the world-to-shape transform.
 
 Light:
