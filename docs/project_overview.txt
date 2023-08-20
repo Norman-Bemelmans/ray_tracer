@@ -3,7 +3,6 @@ Ray tracer project overview:
 Core modules:
 - Geometric Utilities: (e.g. vector, surface normal, transform, etc.)
 - Camera
-- View_Plane
 - Shape
 - Material
 - BRDF
@@ -30,13 +29,10 @@ Camera:
 The camera contains all the information to render a scene given a world with objects and
 lights. A Camera instance contains an eye-point (viewing coordinate system origin), a
 view direction, a Vector3 which points up, and the camera-to-world transformation. It 
-also provides the focal length of the camera.
-
-View_Plane:
-The World contains an instance of the View_Plane class. This stores the horizontal and 
-vertical resolution of the screen as well as the coordinates for the top, bottom, left, 
-and right edges of the screen. These coordinates are used to generate the rays for 
-intersection testing.
+also provides the focal length of the camera. The Camera class is an inheritance structure; 
+it is purely virtual so only a derived class can be directly instantiated. Each derived 
+class is responsible for providing a Create_Ray() method that returns a ray for object 
+intersection.
 
 Shape:
 This class contains spheres, planes, triangles and other geometric objects for camera rays to 
