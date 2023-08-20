@@ -2,4 +2,8 @@
 !/**/
 !*.*
 
+.vscode
+!.vscode/launch.json
+
+
 /home/norman/code/ray_tracer/build
