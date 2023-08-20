@@ -25,6 +25,7 @@ namespace RT {
         friend Transform translate(const Vector3& v);
         friend Transform look_at(const Point3& pos, const Point3& look, const Vector3& up);
         friend void test_def_ctor();
+        friend void test_ctor();
         friend void test_ctor1();
         friend void test_ctor2();
         friend void test_transpose();
