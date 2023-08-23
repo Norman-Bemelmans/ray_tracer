@@ -1,0 +1,2 @@
+// Material (abstract class) declaration
+
