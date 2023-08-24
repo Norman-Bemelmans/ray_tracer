@@ -17,4 +17,6 @@ namespace RT {
     {
         c2w = look_at(ep, vd, up);
     }
+
+    Camera::~Camera() {}
 }

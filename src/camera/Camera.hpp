@@ -31,6 +31,8 @@ namespace RT {
     public:
         Camera();
         Camera(Point3 ep, Point3 vd, Vector3 up, float fl);
+
+        virtual ~Camera();
         virtual Ray Create_Ray(float u, float v) = 0;
     };
 }
