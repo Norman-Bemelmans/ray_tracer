@@ -16,9 +16,11 @@ namespace RT {
     class Hit_Record {
     public:
         Hit_Record();
-    private:
+        
         Point3 hp;
         Normal sn;
         std::unique_ptr<Material> mat;
-    }
+    };
 }
+
+#endif
