@@ -19,6 +19,10 @@ namespace RT {
 
         Normal();
         Normal(float x_init, float y_init, float z_init);
+        // Sometimes I might need to consider the result of some vector 
+        // calculations to be a Normal so I've included a constructor 
+        // that initializes a Normal from a given vector.
+        Normal(const Vector3&);
 
         Normal operator+(const Normal& other) const;
         Normal& operator+=(const Normal& other);

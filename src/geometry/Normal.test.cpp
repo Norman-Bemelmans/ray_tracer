@@ -25,6 +25,15 @@ namespace RT {
             assert(test.z == 3.0);
         }
 
+        void test_ctor_vec()
+        {
+            Vector3 v(1.0, 2.0, 3.0);
+            Normal n(v);
+            assert(n.x == 1.0);
+            assert(n.y == 2.0);
+            assert(n.z == 3.0);
+        }
+
         void test_plus()
         {
             Normal n1(1.0, 2.0, 3.0);
@@ -158,6 +167,7 @@ int main()
 {
     RT::test_def_ctor();
     RT::test_ctor();
+    RT::test_ctor_vec();
     RT::test_plus();
     RT::test_plus_eqs();
     RT::test_minus();
