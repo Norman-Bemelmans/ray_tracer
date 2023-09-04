@@ -54,11 +54,10 @@ namespace RT {
                       mat.m[0][3], mat.m[1][3], mat.m[2][3], mat.m[3][3]);
     }
 
-    // Try to avoid using this method. It is computationally expensive and
-    // prone to loss of numerical precision (particularly for matrices with
-    // determinant close to zero.) It is provided as a last resort only.
+    // Avoid using this method for matrices that are scales, rotations, or 
+    // translations or known compositions of these transformations.
     // Strongly prefer the Transform methods which are explicitly provided 
-    // with an affine transformation and its inverse.
+    // with an affine transformation and its inverse in those cases.
     Matrix inverse(const Matrix& m)
     {
 
