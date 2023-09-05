@@ -2,8 +2,8 @@
 // Hit_Record allows for information transfer between the geometry and shading 
 // subsystems of the tracer. 
 
-#ifndef HIT_RECORD_CPP
-#define HIT_RECORD_CPP
+#ifndef HIT_RECORD_HPP
+#define HIT_RECORD_HPP
 
 #include <memory>
 
@@ -19,7 +19,7 @@ namespace RT {
         
         Point3 hp;
         Normal sn;
-        std::unique_ptr<Material> mat;
+        std::unique_ptr<RT::Material> mat;
     };
 }
 
