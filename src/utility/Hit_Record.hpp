@@ -5,13 +5,13 @@
 #ifndef HIT_RECORD_HPP
 #define HIT_RECORD_HPP
 
-#include <memory>
-
 #include "Normal.hpp"
 #include "Point3.hpp"
-#include "Material.hpp"
+//#include "Material.hpp"
 
 namespace RT {
+
+    class Material;
 
     class Hit_Record {
     public:
@@ -19,7 +19,7 @@ namespace RT {
         
         Point3 hp;
         Normal sn;
-        std::unique_ptr<RT::Material> mat;
+        Material* mat;
     };
 }
 

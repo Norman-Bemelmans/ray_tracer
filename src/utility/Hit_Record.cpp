@@ -3,7 +3,7 @@
 #include "Hit_Record.hpp"
 #include "Normal.hpp"
 #include "Point3.hpp"
-#include "Material.hpp"
+//#include "Material.hpp"
 
 namespace RT {
 

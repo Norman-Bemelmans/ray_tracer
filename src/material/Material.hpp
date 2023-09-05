@@ -9,7 +9,7 @@
 
 #include "Light.hpp"
 #include "RGB_Color.hpp"
-#include "Hit_Record.hpp"
+//#include "Hit_Record.hpp"
 
 namespace RT {
 
