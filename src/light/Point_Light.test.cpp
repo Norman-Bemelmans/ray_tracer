@@ -5,8 +5,8 @@
 #include <iostream>
 
 #include "Point_Light.hpp"
-#include "Light"
-#include "RGB_Color"
+#include "Light.hpp"
+#include "RGB_Color.hpp"
 #include "Point3.hpp"
 #include "Hit_Record.hpp"
 
