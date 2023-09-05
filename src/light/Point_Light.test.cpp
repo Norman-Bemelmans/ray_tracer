@@ -19,9 +19,9 @@ namespace RT {
         assert(test.color.g == 1.0);
         assert(test.color.b == 1.0);
 
-        assert(test.loc.x == 1.0);
-        assert(test.loc.y == 1.0);
-        assert(test.loc.z == 1.0);
+        assert(test.loc.x == 0.0);
+        assert(test.loc.y == 0.0);
+        assert(test.loc.z == 0.0);
     }
 
     void test_ctor()

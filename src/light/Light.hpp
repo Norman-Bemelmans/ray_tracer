@@ -10,6 +10,8 @@
 namespace RT {
 
     class Light {
+        friend void test_def_ctor();
+        friend void test_ctor();
     public:
         Light();
         Light(const RGB_Color& color);
