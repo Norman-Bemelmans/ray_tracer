@@ -12,6 +12,7 @@ namespace RT {
     class Light {
     public:
         Light();
+        Light(const RGB_Color& color);
         virtual ~Light();
 
         // point-to-light direction:

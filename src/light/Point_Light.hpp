@@ -14,7 +14,7 @@ namespace RT {
     class Point_Light : public Light {
     public:
         Point_Light();
-        Point_Light(Point3 pt, RGB_Color color);
+        Point_Light(Point3 loc_init, RGB_Color color_init);
 
         Vector3 ptl_dir(const Hit_Record& hr);
     private:
