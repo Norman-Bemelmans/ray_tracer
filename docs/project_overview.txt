@@ -14,7 +14,7 @@ Core modules:
 
 Geometric Utilities:
 These provide basic functionality like vector algebra and matrix multiplication.
-Currently implemented classes are Matrix, Normal, Point3, Ray, Transform, and Vector3.
+The currently implemented classes are Matrix, Normal, Point3, Ray, Transform, and Vector3.
 The Transform class comprises a matrix and its inverse. Vector3 supports basic operations
 (e.g. vector addition, scalar multiplication, normalization, dot product, and cross product.)
 The Normal class is very similar in implementation to Vector3 but there are a few key differences.
