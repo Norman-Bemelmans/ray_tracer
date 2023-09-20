@@ -11,19 +11,11 @@
 namespace RT {
 
     class RGB_Color{
-        friend void test_def_ctor();
-        friend void test_ctor();
-        friend void test_plus();
-        friend void test_plus_eqs();
-        friend void test_mult();
-        friend void test_mult_scalar();
-        friend void test_div();
-        friend void test_exponent();
-    private:
+    public:
         float r;
         float g;
         float b;
-    public:
+
         RGB_Color();
         RGB_Color(float r, float g, float b);
 
