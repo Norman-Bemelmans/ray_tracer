@@ -15,12 +15,11 @@ namespace RT {
     public:
         Light();
         Light(const RGB_Color& color);
+        RGB_Color color;
         virtual ~Light();
 
         // point-to-light direction:
         virtual Vector3 ptl_dir(const Hit_Record& hr) = 0;
-    protected:
-        RGB_Color color;
     };
 }
 
