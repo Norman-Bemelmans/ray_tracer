@@ -8,12 +8,15 @@
 #include <vector>
 
 #include "Material.hpp"
-#include "RGB_Color"
-#include "Hit_Record"
+#include "RGB_Color.hpp"
+#include "Hit_Record.hpp"
 
 namespace RT {
 
     class Matte : public Material {
+        friend void test_def_ctor();
+        friend void test_ctor();
+        friend void test_shade();
     public:
         Matte();
 

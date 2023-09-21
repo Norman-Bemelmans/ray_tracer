@@ -17,8 +17,9 @@ namespace RT{
         // return pixel radiance value:
         RGB_Color rad;
         for (auto i = 0; i < lv.size(); i++) {
-            rad += kd * lv[i];
+            rad += kd * lv[i].color;
         }
+        rad = Material::max_to_one(rad);
         return rad;
     }
 }
