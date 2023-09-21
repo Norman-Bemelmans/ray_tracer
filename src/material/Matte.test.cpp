@@ -49,7 +49,6 @@ namespace RT {
         vec.push_back(b);
         vec.push_back(c);
         Matte test;
-        assert(std::abs(test.shade(hitrec, vec).r - 1.0) < epsilon);
         assert(test.shade(hitrec, vec).r == 1.0);
         assert(test.shade(hitrec, vec).g == 1.0);
         assert(test.shade(hitrec, vec).b == 1.0);
