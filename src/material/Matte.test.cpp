@@ -25,21 +25,32 @@ namespace RT {
 
     void test_ctor()
     {
+        const float epsilon = 0.00001;
         Matte test(0.1, 0.2, RGB_Color(0.5, 0.6, 0.7));
-        assert(test.ka == 0.1);
-        assert(test.kd == 0.2);
-        assert(test.cd.r == 0.5);
-        assert(test.cd.g == 0.6);
-        assert(test.cd.b == 0.7);
+        assert(std::abs(test.ka - 0.1) < epsilon);
+        assert(std::abs(test.kd - 0.2) < epsilon);
+        assert(std::abs(test.cd.r - 0.5) < epsilon);
+        assert(std::abs(test.cd.g - 0.6) < epsilon);
+        assert(std::abs(test.cd.b - 0.7) < epsilon);
     }
 
     void test_shade()
     {
-        std::vector<Light> vec = {Point_Light a, Point_Light b, Point_Light c};
+        const float epsilon = 0.00001;
+        Hit_Record hitrec;
+        std::vector<Light*> vec;
+        Point_Light* a; 
+        Point_Light* b;
+        Point_Light* c;
+        vec.push_back(a);
+        vec.push_back(b);
+        vec.push_back(c);
         Matte test;
-        assert(test.shade().r == 1.0);
-        assert(test.shade().g == 1.0);
-        assert(test.shade().b == 1.0);
+        std::cout << test.shade(hitrec, vec).r << "\n";
+        assert(std::abs(test.shade(hitrec, vec).r - 1.0) < epsilon);
+        assert(test.shade(hitrec, vec).r == 1.0);
+        assert(test.shade(hitrec, vec).g == 1.0);
+        assert(test.shade(hitrec, vec).b == 1.0);
     }
 }
 

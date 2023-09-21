@@ -24,7 +24,7 @@ namespace RT {
         // the diffuse color as parameters:
         Matte(float ka, float kd, RGB_Color cd);
 
-        RGB_Color shade(const Hit_Record& hr, const std::vector<Light>& lv);
+        RGB_Color shade(const Hit_Record& hr, const std::vector<Light*>& lv);
     private:
         // ambient reflection coefficient:
         float ka;

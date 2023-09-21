@@ -12,12 +12,12 @@ namespace RT{
     Matte::Matte(float ka, float kd, RGB_Color cd) : ka(ka), kd(kd), cd(cd) {}
 
     // For now, I am ignoring global illumination. Later versions will use ka.
-    RGB_Color Matte::shade(const Hit_Record& hr, const std::vector<Light>& lv)
+    RGB_Color Matte::shade(const Hit_Record& hr, const std::vector<Light*>& lv)
     {
         // return pixel radiance value:
         RGB_Color rad;
         for (auto i = 0; i < lv.size(); i++) {
-            rad += kd * lv[i].color;
+            rad += kd * lv[i] -> color;
         }
         rad = Material::max_to_one(rad);
         return rad;
