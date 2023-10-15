@@ -60,14 +60,14 @@ namespace RT {
         return Vector3(-x, -y, -z);
     }
 
-    float Vector3::length_squared() const
+    float Vector3::lengthSquared() const
     {
         return x*x + y*y + z*z;
     }
 
     float Vector3::length() const
     {
-        return std::sqrt(length_squared());
+        return std::sqrt(lengthSquared());
     }
 
     Vector3 abs(const Vector3& vec)

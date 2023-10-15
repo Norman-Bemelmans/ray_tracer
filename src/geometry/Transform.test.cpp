@@ -579,7 +579,7 @@ namespace RT {
         Point3 pos(1.0, 3.0, 5.0);
         Point3 look(-3.0, 3.0, 5.0);
         Vector3 up(0.0, 1.0, 0.0);
-        Transform t = look_at(pos, look, up);
+        Transform t = lookAt(pos, look, up);
 
         assert(std::abs(t.m.m[0][0] - 0.0) < epsilon);
         assert(std::abs(t.m.m[0][1] - 0.0) < epsilon);

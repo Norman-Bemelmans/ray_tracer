@@ -44,6 +44,6 @@ namespace RT {
 
     float squareDist(const Point3& p1, const Point3& p2)
     {
-        return (p1 - p2).length_squared();
+        return (p1 - p2).lengthSquared();
     }
 }

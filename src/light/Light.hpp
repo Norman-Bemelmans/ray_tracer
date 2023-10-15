@@ -4,8 +4,8 @@
 #define LIGHT_HPP
 
 #include "Vector3.hpp"
-#include "RGB_Color.hpp"
-#include "Hit_Record.hpp"
+#include "RGBColor.hpp"
+#include "HitRecord.hpp"
 
 namespace RT {
 
@@ -14,12 +14,12 @@ namespace RT {
         friend void test_ctor();
     public:
         Light();
-        Light(const RGB_Color& color);
-        RGB_Color color;
+        Light(const RGBColor& color);
+        RGBColor color;
         virtual ~Light();
 
         // point-to-light direction:
-        virtual Vector3 ptl_dir(const Hit_Record& hr) = 0;
+        virtual Vector3 ptlDir(const HitRecord& hr) = 0;
     };
 }
 

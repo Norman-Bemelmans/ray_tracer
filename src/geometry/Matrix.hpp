@@ -2,6 +2,7 @@
 
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
+
 namespace RT {
 
     class Matrix {

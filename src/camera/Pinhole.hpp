@@ -22,7 +22,7 @@ namespace RT {
         Pinhole(Point3 ep, Point3 vd, Vector3 up, float fl,
                 int v, int h, float t, float b, float l, float r);
 
-        Ray Create_Ray(float u, float v);
+        Ray createRay(float u, float v);
     };
 }
 

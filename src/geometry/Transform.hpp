@@ -23,7 +23,7 @@ namespace RT {
         friend Transform rot_y(float theta);
         friend Transform rot_z(float theta);
         friend Transform translate(const Vector3& v);
-        friend Transform look_at(const Point3& pos, const Point3& look, const Vector3& up);
+        friend Transform lookAt(const Point3& pos, const Point3& look, const Vector3& up);
         friend void test_def_ctor();
         friend void test_ctor();
         friend void test_ctor1();
@@ -78,7 +78,7 @@ namespace RT {
     // first two parameters gives a vector between the camera and the object
     // to be looked at and the final parameter gives the up direction.
     // These data are sufficient to orient the camera in space.
-    Transform look_at(const Point3& pos, const Point3& look, const Vector3& up);
+    Transform lookAt(const Point3& pos, const Point3& look, const Vector3& up);
 }
 
 #endif

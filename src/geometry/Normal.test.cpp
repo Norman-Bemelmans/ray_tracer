@@ -117,7 +117,7 @@ namespace RT {
         void test_len_sqrd()
         {
             Normal n(1.0, 2.0, 3.0);
-            assert(n.length_squared() == 14.0);
+            assert(n.lengthSquared() == 14.0);
         }
 
         void test_length()

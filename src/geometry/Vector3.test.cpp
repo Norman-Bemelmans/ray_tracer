@@ -116,7 +116,7 @@ namespace RT {
     void test_len_sqrd()
     {
         Vector3 v(1.0, 2.0, 3.0);
-        assert(v.length_squared() == 14.0);
+        assert(v.lengthSquared() == 14.0);
     }
 
     void test_length()

@@ -58,14 +58,14 @@ namespace RT {
         return *this;
     }
 
-    float Normal::length_squared() const
+    float Normal::lengthSquared() const
     {
         return x*x + y*y + z*z;
     }
 
     float Normal::length() const
     {
-        return std::sqrt(length_squared());
+        return std::sqrt(lengthSquared());
     }
 
 

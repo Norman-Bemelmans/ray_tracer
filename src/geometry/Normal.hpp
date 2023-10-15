@@ -34,7 +34,7 @@ namespace RT {
         Normal operator/(const float scalar) const;
         Normal& operator/=(const float scalar);
 
-        float length_squared() const;
+        float lengthSquared() const;
         float length() const;
     };
 

@@ -14,8 +14,8 @@ namespace RT {
                      Camera(ep, vd, up, fl), vres(v), hres(h), t(t), b(b),
                      l(l), r(r) {}
 
-    Ray Pinhole::Create_Ray(float u, float v)
+    Ray Pinhole::createRay(float u, float v)
     {
-        return Ray(Point3(0.0, 0.0, 0.0), Vector3(l + (r - l)*(u + 0.5)/hres, t + (b -t)*(v + 0.5)/vres, foc_len));
+        return Ray(Point3(0.0, 0.0, 0.0), Vector3(l + (r - l)*(u + 0.5)/hres, t + (b -t)*(v + 0.5)/vres, focLen));
     }
 }

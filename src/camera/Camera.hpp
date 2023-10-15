@@ -23,7 +23,7 @@ namespace RT {
 
         // foc_len is the focal length: the distance between the eye_point and
         // the image plane.
-        float foc_len;
+        float focLen;
 
         // camera-to-world transform.
         Transform c2w;
@@ -33,7 +33,7 @@ namespace RT {
         Camera(Point3 ep, Point3 vd, Vector3 up, float fl);
 
         virtual ~Camera();
-        virtual Ray Create_Ray(float u, float v) = 0;
+        virtual Ray createRay(float u, float v) = 0;
     };
 }
 

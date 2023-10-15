@@ -8,8 +8,8 @@
 #include <vector>
 
 #include "Material.hpp"
-#include "RGB_Color.hpp"
-#include "Hit_Record.hpp"
+#include "RGBColor.hpp"
+#include "HitRecord.hpp"
 
 namespace RT {
 
@@ -22,16 +22,16 @@ namespace RT {
 
         // ctor takes ambient and diffuse reflection coefficients and 
         // the diffuse color as parameters:
-        Matte(float ka, float kd, RGB_Color cd);
+        Matte(float ka, float kd, RGBColor cd);
 
-        RGB_Color shade(const Hit_Record& hr, const std::vector<Light*>& lv);
+        RGBColor shade(const HitRecord& hr, const std::vector<Light*>& lv);
     private:
         // ambient reflection coefficient:
         float ka;
         // diffuse reflection coefficient:
         float kd;
         // diffuse color:
-        RGB_Color cd;
+        RGBColor cd;
     };
 }
 

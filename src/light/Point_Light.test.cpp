@@ -4,17 +4,17 @@
 #include <cassert>
 #include <iostream>
 
-#include "Point_Light.hpp"
+#include "PointLight.hpp"
 #include "Light.hpp"
-#include "RGB_Color.hpp"
+#include "RGBColor.hpp"
 #include "Point3.hpp"
-#include "Hit_Record.hpp"
+#include "HitRecord.hpp"
 
 namespace RT {
 
     void test_def_ctor()
     {
-        Point_Light test;
+        PointLight test;
         assert(test.color.r == 1.0);
         assert(test.color.g == 1.0);
         assert(test.color.b == 1.0);
@@ -26,7 +26,7 @@ namespace RT {
 
     void test_ctor()
     {
-        Point_Light test(RGB_Color(0.5, 0.5, 0.5), (Point3(1.0, 2.0, 3.0)));
+        PointLight test(RGBColor(0.5, 0.5, 0.5), (Point3(1.0, 2.0, 3.0)));
         assert(test.color.r == 0.5);
         assert(test.color.g == 0.5);
         assert(test.color.b == 0.5);
@@ -42,6 +42,6 @@ int main()
     RT::test_def_ctor();
     RT::test_ctor();
 
-    std::cout << "Point_Light class unit test successfully completed.\n";
+    std::cout << "PointLight class unit test successfully completed.\n";
     return 0;
 }

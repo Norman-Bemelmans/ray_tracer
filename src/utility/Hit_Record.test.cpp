@@ -4,13 +4,13 @@
 #include <iostream>
 #include <type_traits>
 
-#include "Hit_Record.hpp"
+#include "HitRecord.hpp"
 
 namespace RT {
 
     void test_def_ctor()
     {
-        Hit_Record test;
+        HitRecord test;
         assert(test.hp.x == 0.0);
         assert(test.hp.y == 0.0);
         assert(test.hp.z == 0.0);
@@ -24,6 +24,6 @@ int main()
 {
     RT::test_def_ctor();
     
-    std::cout << "Hit_Record class unit test successfully completed.\n";
+    std::cout << "HitRecord class unit test successfully completed.\n";
     return 0;
 }

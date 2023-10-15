@@ -8,19 +8,15 @@
 #include <vector>
 
 #include "Light.hpp"
-#include "RGB_Color.hpp"
-//#include "Hit_Record.hpp"
+#include "RGBColor.hpp"
 
 namespace RT {
 
-    class Hit_Record;
+    class HitRecord;
 
     class Material {
     protected:
-        virtual RGB_Color shade(const Hit_Record& hr,  const std::vector<RT::Light*>& lv) = 0;
-        // max_to_one handles out-of-gamut colors. It divides all color channels by the value 
-        // of the max channel so that the RGB_Color has no channel higher than one.
-        RGB_Color max_to_one(const RGB_Color& col);
+        virtual RGBColor shade(const HitRecord& hr,  const std::vector<RT::Light*>& lv) = 0;
     };
 }
 

@@ -28,7 +28,7 @@ namespace RT {
         // Unary '-' changes the sign of a vector:
         Vector3 operator-() const;
 
-        float length_squared() const;
+        float lengthSquared() const;
         float length() const;
     };
 

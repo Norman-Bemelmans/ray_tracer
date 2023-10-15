@@ -2,20 +2,19 @@
 // Hit_Record allows for information transfer between the geometry and shading 
 // subsystems of the tracer. 
 
-#ifndef HIT_RECORD_HPP
-#define HIT_RECORD_HPP
+#ifndef HITRECORD_HPP
+#define HITRECORD_HPP
 
 #include "Normal.hpp"
 #include "Point3.hpp"
-//#include "Material.hpp"
 
 namespace RT {
 
     class Material;
 
-    class Hit_Record {
+    class HitRecord {
     public:
-        Hit_Record();
+        HitRecord();
         
         Point3 hp;
         Normal sn;

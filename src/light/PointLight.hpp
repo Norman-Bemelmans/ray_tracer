@@ -1,24 +1,24 @@
 // Point_Light (derived from Light) declarations
 
-#ifndef POINT_LIGHT_HPP
-#define POINT_LIGHT_HPP
+#ifndef POINTLIGHT_HPP
+#define POINTLIGHT_HPP
 
 #include "Light.hpp"
-#include "RGB_Color.hpp"
+#include "RGBColor.hpp"
 #include "Point3.hpp"
 #include "Vector3.hpp"
-#include "Hit_Record.hpp"
+#include "HitRecord.hpp"
 
 namespace RT {
 
-    class Point_Light : public Light {
+    class PointLight : public Light {
         friend void test_def_ctor();
         friend void test_ctor();
     public:
-        Point_Light();
-        Point_Light(RGB_Color color_init, Point3 loc_init);
+        PointLight();
+        PointLight(RGBColor color_init, Point3 loc_init);
 
-        Vector3 ptl_dir(const Hit_Record& hr);
+        Vector3 ptlDir(const HitRecord& hr);
     private:
         // Location of point light.
         Point3 loc;

@@ -6,10 +6,10 @@
 
 #include "Matte.hpp"
 #include "Material.hpp"
-#include "RGB_Color.hpp"
-#include "Hit_Record.hpp"
+#include "RGBColor.hpp"
+#include "HitRecord.hpp"
 #include "Light.hpp"
-#include "Point_Light.hpp"
+#include "PointLight.hpp"
 
 namespace RT {
 
@@ -26,7 +26,7 @@ namespace RT {
     void test_ctor()
     {
         const float epsilon = 0.00001;
-        Matte test(0.1, 0.2, RGB_Color(0.5, 0.6, 0.7));
+        Matte test(0.1, 0.2, RGBColor(0.5, 0.6, 0.7));
         assert(std::abs(test.ka - 0.1) < epsilon);
         assert(std::abs(test.kd - 0.2) < epsilon);
         assert(std::abs(test.cd.r - 0.5) < epsilon);
@@ -37,14 +37,14 @@ namespace RT {
     void test_shade()
     {
         const float epsilon = 0.00001;
-        Hit_Record hitrec;
+        HitRecord hitrec;
         std::vector<Light*> vec;
-        Point_Light x;
-        Point_Light y;
-        Point_Light z;
-        Point_Light* a = &x; 
-        Point_Light* b = &y;
-        Point_Light* c = &z;
+        PointLight x;
+        PointLight y;
+        PointLight z;
+        PointLight* a = &x; 
+        PointLight* b = &y;
+        PointLight* c = &z;
         vec.push_back(a);
         vec.push_back(b);
         vec.push_back(c);

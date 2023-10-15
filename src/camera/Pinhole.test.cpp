@@ -27,7 +27,7 @@ namespace RT {
         assert(std::abs(c.up.y + 1.0) < epsilon);
         assert(std::abs(c.up.z - 0.0) < epsilon);
 
-        assert(std::abs(c.foc_len - 1.0) < epsilon);
+        assert(std::abs(c.focLen - 1.0) < epsilon);
 
         assert(c.c2w.m.m[0][0] == 1.0); assert(c.c2w.m.m[0][1] == 0.0);
         assert(c.c2w.m.m[0][2] == 0.0); assert(c.c2w.m.m[0][3] == 0.0);
@@ -71,7 +71,7 @@ namespace RT {
         assert(std::abs(c.up.y + 1.0) < epsilon);
         assert(std::abs(c.up.z - 0.0) < epsilon);
 
-        assert(std::abs(c.foc_len - 2.5) < epsilon);
+        assert(std::abs(c.focLen - 2.5) < epsilon);
 
         assert(c.c2w.m.m[0][0] == -1.0); assert(c.c2w.m.m[0][1] == 0.0);
         assert(c.c2w.m.m[0][2] == 0.0); assert(c.c2w.m.m[0][3] == 0.0);
@@ -104,7 +104,7 @@ namespace RT {
         float epsilon = 0.00001;
         Pinhole p;
 
-        Ray r = p.Create_Ray(0, 0);
+        Ray r = p.createRay(0, 0);
 
         assert(std::abs(r.o.x - 0.0) < epsilon);
         assert(std::abs(r.o.y - 0.0) < epsilon);
