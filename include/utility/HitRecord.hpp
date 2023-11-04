@@ -14,7 +14,7 @@ namespace RT {
 
     class HitRecord {
     public:
-        HitRecord();
+        HitRecord ();
         
         Point3 hp;
         Normal sn;
