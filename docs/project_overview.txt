@@ -8,8 +8,8 @@ Core modules:
 - BRDF
 - Light
 - World
-- Hit_Record
-- RGB_Color
+- HitRecord
+- RGBColor
 - Film
 
 Geometric Utilities:
@@ -30,8 +30,8 @@ The camera contains all the information to render a scene given a world with obj
 lights. A Camera instance contains an eye-point (viewing coordinate system origin), a
 view direction, a Vector3 which points up, and the camera-to-world transformation. It 
 also provides the focal length of the camera. The Camera class is an inheritance structure; 
-it is purely virtual so only a derived class can be directly instantiated. Each derived 
-class is responsible for providing a Create_Ray() method that returns a ray for object 
+it is purely virtual so only a derived class can be instantiated. Each derived 
+class is responsible for providing a createRay() method that returns a ray for object 
 intersection.
 
 Shape:
@@ -39,7 +39,7 @@ This class contains spheres, planes, triangles and other geometric objects for c
 intersect. This should become a large inheritance structure comprising many types of
 objects, though at first I will just implement a few. The Shape class provides a hit()
 method and each derived class must provide a hit() method that implements a ray
-intersection test for its own unique geometry. Each instance of a Shape derived class
+intersection test for its own unique geometry. The Shape base class
 also includes a pointer to a material. Shape instances contain a transform 
 representing the object-to-world and its inverse. I may cache Transforms in a hashmap 
 and include a pointer to a Transform as Class data if memory becomes a bottleneck ( I think 
@@ -48,10 +48,10 @@ that will only happen for huge scenes.)
 Material:
 The Material class is the basis for another inheritance structure, this time implementing
 shading functions. The base class provides the virtual method Shade(),and all derived
-classes must provide a Shade() method as well. Derived classes will often (but not
+classes must provide a shade() method as well. Derived classes will often (but not
 always) include a pointer to a BRDF (to support more advanced reflection functions.)
 Many will also provide reflection coefficients (diffuse, specular, etc.) as a
-RGB_Color.
+RGBColor.
 
 BRDF:
 This class holds a BRDF. It contains the BRDF itself as well as the reflectance.
@@ -68,24 +68,24 @@ lights contain a pointer to the  transforms which situate it in world space.
 World:
 World is the data structure that contains all elements of the scene: the camera,
 the shapes, the lights, transformations, and the film. The shapes, transformations, 
-and lights are each stored in a vector of pointers. The world also
+and lights are each stored in a vector of pointers. The World also
 contains an initialized camera instance and an instance of the film class, the latter
-of which stores the pixel values as a C-style array of RGB_Colors. For now, the world
+of which stores the pixel values as a C-style array of RGBColors. For now, the world
 instance is initialized from a formatted text file.
 
-Hit_Record:
+HitRecord:
 This utility class carries information between the subsystems of the ray tracer.
 For a ray-object intersection, it records the associated hit point, material, and surface
-normal (IN WORLD COORDINATES!). The Hit_Record instance is then passed to the appropriate 
-Shade() method and it sums the radiance contribution from each light. Once complete, it 
+normal (IN WORLD COORDINATES!). The HitRecord instance is then passed to the appropriate 
+shade() method and it sums the radiance contribution from each light. Once complete, it 
 passes the pixel radiance value to the World's Film instance.
 
-RGB_Color:
+RGBColor:
 Simple 256 bit color. Supports addition and subtraction of pixel values. I'm hoping
 this will work in a variety of file formats for display on most screens.
 
 Film:
-Simple array of RGB_Colors with (horizontal image resolution)x(vertical image
+Simple array of RGBColors with (horizontal image resolution)x(vertical image
 resolution) elements. The output file (PNG, JPG, etc.) is created from this
 representation.
 
@@ -94,7 +94,7 @@ representation.
 Principle of Operation:
 
 This program initializes a camera defined in 3D space, several lights and objects, 
-and a pixelated image plane at a fixed distance from the camera. After initialization, 
+and a graticulated image plane at a fixed distance from the camera. After initialization, 
 the tracer runs the following loop:
 
 FOR each pixel(i,j) in image plane
