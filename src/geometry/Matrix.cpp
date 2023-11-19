@@ -6,7 +6,6 @@
 #include "Matrix.hpp"
 
 namespace RT {
-
     Matrix::Matrix()
     {
         m[0][0] = 1.0; m[0][1] = 0.0; m[0][2] = 0.0; m[0][3] = 0.0;

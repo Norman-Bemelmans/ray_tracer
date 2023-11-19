@@ -14,7 +14,6 @@
 #include "Ray.hpp"
 
 namespace RT {
-
     class Transform {
         friend Transform transpose(const Transform& t);
         friend Transform inverse(const Transform& t);

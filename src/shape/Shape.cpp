@@ -1,7 +1,7 @@
 // Shape (abstract) class implementation.
 
-#include "Shape.cpp"
+#include "Shape.hpp"
 
 namespace RT {
-    
+    Shape::Shape() : material(nullptr) {}
 }

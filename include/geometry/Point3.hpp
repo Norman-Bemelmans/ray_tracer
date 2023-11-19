@@ -6,7 +6,6 @@
 #include "Vector3.hpp"
 
 namespace RT {
-
     class Point3 {
     public:
         float x;

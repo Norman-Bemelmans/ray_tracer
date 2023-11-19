@@ -10,7 +10,6 @@
 #include "Normal.hpp"
 
 namespace RT {
-
     Transform::Transform()
     {
         m = Matrix();

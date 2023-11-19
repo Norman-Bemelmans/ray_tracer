@@ -6,8 +6,7 @@
 #include "Vector3.hpp"
 #include "Point3.hpp"
 
-namespace RT {
-    
+namespace RT { 
     class Ray {
     public:
         Point3 o;

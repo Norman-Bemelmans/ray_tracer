@@ -12,7 +12,6 @@
 #include "HitRecord.hpp"
 
 namespace RT {
-
     class Matte : public Material {
         friend void test_def_ctor();
         friend void test_ctor();

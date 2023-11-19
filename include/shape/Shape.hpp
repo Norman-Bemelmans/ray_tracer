@@ -7,7 +7,6 @@
 #include "Material.hpp"
 
 namespace RT {
-
     class Shape {
     protected:
         virtual hit(Ray r) = 0;

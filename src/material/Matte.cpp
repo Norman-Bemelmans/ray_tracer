@@ -8,7 +8,6 @@
 #include "HitRecord.hpp"
 
 namespace RT{
-
     Matte::Matte() : ka(1.0), kd(1.0) , cd(0.5, 0.5, 0.5) {}
     Matte::Matte(float ka, float kd, RGBColor cd) : ka(ka), kd(kd), cd(cd) {}
 

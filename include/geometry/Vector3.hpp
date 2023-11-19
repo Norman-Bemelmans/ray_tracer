@@ -4,8 +4,7 @@
 #ifndef VECTOR3_HPP
 #define VECTOR3_HPP
 
-namespace RT {
-    
+namespace RT { 
     class Vector3 {
     public:
         float x;

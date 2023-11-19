@@ -6,7 +6,6 @@
 #include "Vector3.hpp"
 
 namespace RT {
-
     // Normal needs its own class; it is like a vector but it supports
     // different operations and doesn't interact simply with transformations
     // (in general, a transformed surface normal is not normal to the

@@ -5,7 +5,6 @@
 #include "RGBColor.hpp"
 
 namespace RT {
-
     RGBColor::RGBColor() : r(0.0), g(0.0), b(0.0) {}
     RGBColor::RGBColor(float r, float g, float b) : r(r), g(g), b(b) {}
 

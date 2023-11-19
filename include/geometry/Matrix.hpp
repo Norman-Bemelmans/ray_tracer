@@ -4,7 +4,6 @@
 #define MATRIX_HPP
 
 namespace RT {
-
     class Matrix {
     public:
         float m[4][4];

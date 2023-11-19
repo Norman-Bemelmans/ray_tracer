@@ -10,7 +10,6 @@
 #include "HitRecord.hpp"
 
 namespace RT {
-
     class PointLight : public Light {
         friend void test_def_ctor();
         friend void test_ctor();

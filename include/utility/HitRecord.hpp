@@ -9,7 +9,6 @@
 #include "Point3.hpp"
 
 namespace RT {
-
     class Material;
 
     class HitRecord {

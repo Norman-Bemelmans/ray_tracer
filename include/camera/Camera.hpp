@@ -9,7 +9,6 @@
 #include "Ray.hpp"
 
 namespace RT {
-
     class Camera {
         friend void test_def_ctor();
         friend void test_ctor();

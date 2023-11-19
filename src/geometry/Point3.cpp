@@ -3,8 +3,7 @@
 #include "Point3.hpp"
 #include "Vector3.hpp"
 
-namespace RT {
-    
+namespace RT { 
     Point3::Point3() : x(0), y(0), z(0) {}
     Point3::Point3(float x_init, float y_init, float z_init)
         : x(x_init), y(y_init), z(z_init) {}

@@ -7,7 +7,6 @@
 #include "HitRecord.hpp"
 
 namespace RT {
-
     PointLight::PointLight() : Light(), loc(0.0, 0.0, 0.0) {}
     PointLight::PointLight(RGBColor color_init, Point3 loc_init) : Light(color_init), loc(loc_init) {}
 

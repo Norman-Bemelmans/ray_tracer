@@ -11,7 +11,6 @@
 #include "RGBColor.hpp"
 
 namespace RT {
-
     class HitRecord;
 
     class Material {

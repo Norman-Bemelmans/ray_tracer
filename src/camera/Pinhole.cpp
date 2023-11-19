@@ -6,7 +6,6 @@
 #include "Ray.hpp"
 
 namespace RT {
-
     Pinhole::Pinhole() : vres(300), hres(400), t(-150.0), b(150.0),
                          l(-200.0), r(200.0) {}
     Pinhole::Pinhole(Point3 ep, Point3 vd, Vector3 up, float fl,

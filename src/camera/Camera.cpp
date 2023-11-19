@@ -6,7 +6,6 @@
 #include "Transform.hpp"
 
 namespace RT {
-
     Camera::Camera() : ep(0.0, 0.0, 0.0), vd(0.0, 0.0, 1.0), up(0.0, -1.0, 0.0), focLen(1.0),
                        c2w(1.0, 0.0, 0.0, 0.0,
                            0.0, 1.0, 0.0, 0.0,

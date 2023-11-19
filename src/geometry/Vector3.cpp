@@ -4,7 +4,6 @@
 #include <cmath>
 
 namespace RT {
-
     Vector3::Vector3() : x(0), y(0), z(0) {}
     Vector3::Vector3(float x_init, float y_init, float z_init)
         : x(x_init), y(y_init), z(z_init) {}

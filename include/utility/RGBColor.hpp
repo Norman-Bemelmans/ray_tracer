@@ -11,7 +11,6 @@
 #include <algorithm>
 
 namespace RT {
-
     class RGBColor{
     public:
         float r;
