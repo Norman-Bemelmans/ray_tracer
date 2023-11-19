@@ -4,4 +4,5 @@
 
 namespace RT {
     Shape::Shape() : material(nullptr) {}
+    Shape::~Shape() {}
 }

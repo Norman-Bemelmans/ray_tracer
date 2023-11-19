@@ -8,8 +8,11 @@
 
 namespace RT {
     class Shape {
+    public:
+        virtual ~Shape() = 0;
     protected:
-        virtual hit(Ray r) = 0;
+        Shape();
+        virtual bool hit(Ray r) = 0;
     private:
         Material* material;
     };
