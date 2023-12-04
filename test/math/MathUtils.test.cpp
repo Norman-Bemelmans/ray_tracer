@@ -1,10 +1,11 @@
 // Math utility methods tests.
 
+#include "MathUtils.hpp"
+
 #include <cmath>
 #include <cassert>
 #include <iostream>
-
-#include "MathUtils.hpp"
+#include <limits>
 
 namespace RT {
     void test_quadratic() {
@@ -14,8 +15,10 @@ namespace RT {
         double b = 3.1;
         double c = 4.1;
 
-        assert(std::abs(quadratic(a, b, c).first) - 0.0 < epsilon);
-        assert(std::abs(quadratic(a, b, c).second) - 0.0  < epsilon);
+        assert(std::abs(quadratic(a, b, c).first) - 
+                        maxDouble > epsilon);
+        assert(std::abs(quadratic(a, b, c).second) - 
+                        maxDouble > epsilon);
 
         double x = 1.0;
         double y = 5.0;
