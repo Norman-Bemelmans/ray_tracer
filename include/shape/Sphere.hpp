@@ -11,7 +11,7 @@ namespace RT {
     class Sphere : public RT::Shape {
     public:
         Sphere(Point3 p, float r);
-        bool hit(Ray r);
+        bool hit(Ray r, HitRecord* hitRecord);
     private:
         Point3 center;
         float radius;

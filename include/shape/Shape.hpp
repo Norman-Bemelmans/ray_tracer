@@ -5,6 +5,7 @@
 
 #include "Ray.hpp"
 #include "Material.hpp"
+#include "HitRecord.hpp"
 
 namespace RT {
     class Shape {
@@ -12,7 +13,7 @@ namespace RT {
         virtual ~Shape() = 0;
     protected:
         Shape();
-        virtual bool hit(Ray r) = 0;
+        virtual bool hit(Ray r, HitRecord* hitRecord) = 0;
     private:
         Material* material;
     };
