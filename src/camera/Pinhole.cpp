@@ -6,15 +6,15 @@
 #include "Ray.hpp"
 
 namespace RT {
-    Pinhole::Pinhole() : vres(300), hres(400), t(-150.0), b(150.0),
-                         l(-200.0), r(200.0) {}
-    Pinhole::Pinhole(Point3 ep, Point3 vd, Vector3 up, float fl,
-                     int v, int h, float t, float b, float l, float r) :
-                     Camera(ep, vd, up, fl), vres(v), hres(h), t(t), b(b),
-                     l(l), r(r) {}
+Pinhole::Pinhole() : vres(300), hres(400), t(-150.0), b(150.0),
+                     l(-200.0), r(200.0) {}
+Pinhole::Pinhole(Point3 ep, Point3 vd, Vector3 up, float fl,
+                    int v, int h, float t, float b, float l, float r)
+                    : Camera(ep, vd, up, fl), vres(v), hres(h), t(t), b(b),
+                      l(l), r(r) {}
 
-    Ray Pinhole::createRay(float u, float v)
-    {
-        return Ray(Point3(0.0, 0.0, 0.0), Vector3(l + (r - l)*(u + 0.5)/hres, t + (b -t)*(v + 0.5)/vres, focLen));
-    }
+Ray Pinhole::createRay(float u, float v)
+{
+    return Ray(Point3(0.0, 0.0, 0.0), Vector3(l + (r - l)*(u + 0.5)/hres, t + (b -t)*(v + 0.5)/vres, focLen));
 }
+} // namespacce RT

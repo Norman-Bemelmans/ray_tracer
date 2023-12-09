@@ -8,15 +8,15 @@
 #include "HitRecord.hpp"
 
 namespace RT {
-    class Shape {
-    public:
-        virtual ~Shape() = 0;
-    protected:
-        Shape();
-        virtual bool hit(Ray r, HitRecord* hitRecord) = 0;
-    private:
-        Material* material;
-    };
-}
+class Shape {
+public:
+    virtual ~Shape() = 0;
+protected:
+    Shape();
+    virtual bool hit(Ray r, HitRecord* hitRecord) = 0;
+private:
+    Material* material;
+};
+} // namespace RT
 
 #endif

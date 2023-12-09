@@ -3,6 +3,6 @@
 #include "Shape.hpp"
 
 namespace RT {
-    Shape::Shape() : material(nullptr) {}
-    Shape::~Shape() {}
-}
+Shape::Shape() : material(nullptr) {}
+Shape::~Shape() {}
+} // namespace RT

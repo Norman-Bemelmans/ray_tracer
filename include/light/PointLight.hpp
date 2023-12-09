@@ -10,18 +10,18 @@
 #include "HitRecord.hpp"
 
 namespace RT {
-    class PointLight : public Light {
-        friend void test_def_ctor();
-        friend void test_ctor();
-    public:
-        PointLight();
-        PointLight(RGBColor color_init, Point3 loc_init);
+class PointLight : public Light {
+    friend void test_def_ctor();
+    friend void test_ctor();
+public:
+    PointLight();
+    PointLight(RGBColor color_init, Point3 loc_init);
 
-        Vector3 ptlDir(const HitRecord& hr);
-    private:
-        // Location of point light.
-        Point3 loc;
-    };
-}
+    Vector3 ptlDir(const HitRecord& hr);
+private:
+    // Location of point light.
+    Point3 loc;
+};
+} // namespace RT
 
 #endif

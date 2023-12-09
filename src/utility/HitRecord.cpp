@@ -5,5 +5,5 @@
 #include "Point3.hpp"
 
 namespace RT {
-    HitRecord::HitRecord() : hp(0.0, 0.0, 0.0), sn(0.0, 0.0, 0.0), mat(nullptr) {}
-}
+HitRecord::HitRecord() : hp(0.0, 0.0, 0.0), sn(0.0, 0.0, 0.0), mat(nullptr) {}
+} // namespace RT

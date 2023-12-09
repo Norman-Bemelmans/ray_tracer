@@ -9,16 +9,16 @@
 #include "Point3.hpp"
 
 namespace RT {
-    class Material;
+class Material;
 
-    class HitRecord {
-    public:
-        HitRecord ();
-        
-        Point3 hp;
-        Normal sn;
-        Material* mat;
-    };
-}
+class HitRecord {
+public:
+    HitRecord ();
+    
+    Point3 hp;
+    Normal sn;
+    Material* mat;
+};
+} // namespace RT
 
 #endif

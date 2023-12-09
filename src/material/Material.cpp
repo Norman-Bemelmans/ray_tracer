@@ -4,4 +4,4 @@
 #include "Material.hpp"
 
 namespace RT {
-}
+} // namespace RT

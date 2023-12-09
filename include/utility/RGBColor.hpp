@@ -11,30 +11,30 @@
 #include <algorithm>
 
 namespace RT {
-    class RGBColor{
-    public:
-        float r;
-        float g;
-        float b;
+class RGBColor{
+public:
+    float r;
+    float g;
+    float b;
 
-        RGBColor();
-        RGBColor(float r, float g, float b);
+    RGBColor();
+    RGBColor(float r, float g, float b);
 
-        RGBColor operator+(const RGBColor& other) const;
-        RGBColor& operator+=(const RGBColor& other);
-        RGBColor operator*(const RGBColor& other) const;
-        RGBColor operator*(const float scalar) const;
-        RGBColor operator/(const float scalar) const;
-        RGBColor exp(const float scalar) const;
-    };
+    RGBColor operator+(const RGBColor& other) const;
+    RGBColor& operator+=(const RGBColor& other);
+    RGBColor operator*(const RGBColor& other) const;
+    RGBColor operator*(const float scalar) const;
+    RGBColor operator/(const float scalar) const;
+    RGBColor exp(const float scalar) const;
+};
 
-    // Including this one for commutativity so users can write a*color 
-    // or color*a, where color is an RGB_Color instance and a is a scalar.
-    RGBColor operator*(float scalar, const RGBColor& color);
+// Including this one for commutativity so users can write a*color 
+// or color*a, where color is an RGB_Color instance and a is a scalar.
+RGBColor operator*(float scalar, const RGBColor& color);
 
-    // max_to_one handles out-of-gamut colors. It divides all color channels by the value 
-    // of the max channel so that the RGB_Color has no channel higher than one.
-    RGBColor maxToOne(const RGBColor& col);
-}
+// max_to_one handles out-of-gamut colors. It divides all color channels by the value 
+// of the max channel so that the RGB_Color has no channel higher than one.
+RGBColor maxToOne(const RGBColor& col);
+} // namespace RT
 
 #endif

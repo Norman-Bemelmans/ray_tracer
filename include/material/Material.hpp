@@ -5,18 +5,18 @@
 #ifndef MATERIAL_HPP
 #define MATERIAL_HPP
 
-#include <vector>
-
 #include "Light.hpp"
 #include "RGBColor.hpp"
 
-namespace RT {
-    class HitRecord;
+#include <vector>
 
-    class Material {
-    protected:
-        virtual RGBColor shade(const HitRecord& hr,  const std::vector<RT::Light*>& lv) = 0;
-    };
-}
+namespace RT {
+class HitRecord;
+
+class Material {
+protected:
+    virtual RGBColor shade(const HitRecord& hr,  const std::vector<RT::Light*>& lv) = 0;
+};
+} // namespace RT
 
 #endif

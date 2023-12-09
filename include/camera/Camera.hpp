@@ -9,31 +9,32 @@
 #include "Ray.hpp"
 
 namespace RT {
-    class Camera {
-        friend void test_def_ctor();
-        friend void test_ctor();
-    protected:
-        // eye-point is  the camera origin.
-        Point3 ep;
-        // view_dir is a point the camera is looking at.
-        Point3 vd;
-        // up is a vector that points up relative to the camera.
-        Vector3 up;
+class Camera {
+    friend void test_def_ctor();
+    friend void test_ctor();
 
-        // foc_len is the focal length: the distance between the eye_point and
-        // the image plane.
-        float focLen;
+public:
+    Camera();
+    Camera(Point3 ep, Point3 vd, Vector3 up, float fl);
 
-        // camera-to-world transform.
-        Transform c2w;
+    virtual ~Camera();
+    virtual Ray createRay(float u, float v) = 0;
 
-    public:
-        Camera();
-        Camera(Point3 ep, Point3 vd, Vector3 up, float fl);
+protected:
+    // eye-point is  the camera origin.
+    Point3 ep;
+    // view_dir is a point the camera is looking at.
+    Point3 vd;
+    // up is a vector that points up relative to the camera.
+    Vector3 up;
 
-        virtual ~Camera();
-        virtual Ray createRay(float u, float v) = 0;
-    };
-}
+    // foc_len is the focal length: the distance between the eye_point and
+    // the image plane.
+    float focLen;
+
+    // camera-to-world transform.
+    Transform c2w;
+};
+} // namespace RT
 
 #endif
