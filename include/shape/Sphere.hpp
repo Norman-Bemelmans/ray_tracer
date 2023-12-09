@@ -9,6 +9,7 @@
 
 namespace RT {
 class Sphere : public RT::Shape {
+    friend void test_ctor();
 public:
     Sphere(Point3 p, float r);
     bool hit(Ray r, HitRecord* hitRecord);
