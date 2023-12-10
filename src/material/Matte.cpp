@@ -14,8 +14,7 @@ Matte::Matte(float ka, float kd, RGBColor cd) : ka(ka), kd(kd), cd(cd) {}
 // For now, I am ignoring global illumination and the directional aspect
 // of the shading calculation. These will need to wait for more classes 
 // in order to be implemented.
-RGBColor Matte::shade(const HitRecord& hr, const std::vector<Light*>& lv)
-{
+RGBColor Matte::shade(const HitRecord& hr, const std::vector<Light*>& lv) {
     // return pixel radiance value:
     RGBColor rad;
     for (auto i = 0; i < lv.size(); i++) {
