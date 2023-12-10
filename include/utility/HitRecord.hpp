@@ -13,7 +13,7 @@ class Material;
 
 class HitRecord {
 public:
-    HitRecord ();
+    HitRecord();
     
     Point3 hp;
     Normal sn;

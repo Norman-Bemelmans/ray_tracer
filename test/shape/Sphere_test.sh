@@ -5,11 +5,14 @@ sudo g++ -I/home/norman/code/ray_tracer/include/geometry \
 	/home/norman/code/ray_tracer/src/geometry/Ray.cpp \
     /home/norman/code/ray_tracer/src/geometry/Vector3.cpp \
     /home/norman/code/ray_tracer/src/geometry/Normal.cpp \
+	/home/norman/code/ray_tracer/src/geometry/Transform.cpp \
+	/home/norman/code/ray_tracer/src/geometry/Matrix.cpp \
 	-I/home/norman/code/ray_tracer/include/utility \
 	/home/norman/code/ray_tracer/src/utility/HitRecord.cpp \
     /home/norman/code/ray_tracer/src/utility/RGBColor.cpp \
     -I/home/norman/code/ray_tracer/include/material \
 	/home/norman/code/ray_tracer/src/material/Material.cpp \
+	/home/norman/code/ray_tracer/src/material/Matte.cpp \
     -I/home/norman/code/ray_tracer/include/math \
 	/home/norman/code/ray_tracer/src/math/MathUtils.cpp \
     -I/home/norman/code/ray_tracer/include/light \
