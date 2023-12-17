@@ -12,13 +12,12 @@ namespace RT {
 class Camera {
     friend void test_def_ctor();
     friend void test_ctor();
-
 public:
     Camera();
     Camera(Point3 ep, Point3 vd, Vector3 up, float fl);
 
     virtual ~Camera();
-    virtual Ray createRay(float u, float v) = 0;
+    virtual Ray createRay(int u, int v) = 0;
 
 protected:
     // eye-point is  the camera origin.
