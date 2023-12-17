@@ -17,7 +17,7 @@ public:
     PointLight();
     PointLight(RGBColor color_init, Point3 loc_init);
 
-    Vector3 ptlDir(const HitRecord& hr);
+    Vector3 ptlDir(const HitRecord& hr) const override;
 private:
     // Location of point light.
     Point3 loc;

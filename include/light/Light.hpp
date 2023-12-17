@@ -18,7 +18,7 @@ public:
     virtual ~Light();
 
     // point-to-light direction:
-    virtual Vector3 ptlDir(const HitRecord& hr) = 0;
+    virtual Vector3 ptlDir(const HitRecord& hr) const = 0;
 };
 } // namespace RT
 
