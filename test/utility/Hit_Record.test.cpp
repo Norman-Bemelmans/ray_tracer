@@ -17,6 +17,9 @@ namespace RT {
         assert(test.sn.x == 0.0);
         assert(test.sn.y == 0.0);
         assert(test.sn.z == 0.0);
+        assert(test.col.r == 0.0);
+        assert(test.col.g == 0.0);
+        assert(test.col.b == 0.0);
     }
 }
 

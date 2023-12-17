@@ -5,8 +5,9 @@
 #ifndef HITRECORD_HPP
 #define HITRECORD_HPP
 
-#include "Normal.hpp"
 #include "Point3.hpp"
+#include "Normal.hpp"
+#include "RGBColor.hpp"
 
 namespace RT {
 class Material;
@@ -17,6 +18,7 @@ public:
     
     Point3 hp;
     Normal sn;
+    RGBColor col;
     Material* mat;
 };
 } // namespace RT
