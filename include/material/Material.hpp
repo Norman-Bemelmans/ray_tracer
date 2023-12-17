@@ -15,7 +15,7 @@ class HitRecord;
 
 class Material {
 protected:
-    virtual RGBColor shade(const HitRecord& hr,  const std::vector<RT::Light*>& lv) = 0;
+    virtual RGBColor shade(const HitRecord& hr,  const Light& light) = 0;
 };
 } // namespace RT
 

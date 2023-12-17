@@ -21,16 +21,14 @@ public:
 
     // ctor takes ambient and diffuse reflection coefficients and 
     // the diffuse color as parameters:
-    Matte(float ka, float kd, RGBColor cd);
+    Matte(RGBColor ka, RGBColor kd);
 
-    RGBColor shade(const HitRecord& hr, const std::vector<Light*>& lv);
+    RGBColor shade(const HitRecord& hr, const Light& light) override;
 private:
     // ambient reflection coefficient:
-    float ka;
+    RGBColor ka;
     // diffuse reflection coefficient:
-    float kd;
-    // diffuse color:
-    RGBColor cd;
+    RGBColor kd;
 };
 } // namespace RT
 

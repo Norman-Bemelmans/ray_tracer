@@ -3,24 +3,20 @@
 #include "Matte.hpp"
 #include "RGBColor.hpp"
 #include "HitRecord.hpp"
+#include "Vector3.hpp"
 
+#include <algorithm>
 #include <vector>
 #include <iostream>
 
-namespace RT{
-Matte::Matte() : ka(1.0), kd(1.0) , cd(0.5, 0.5, 0.5) {}
-Matte::Matte(float ka, float kd, RGBColor cd) : ka(ka), kd(kd), cd(cd) {}
+namespace RT {
+Matte::Matte() : ka(RGBColor(1.0, 1.0, 1.0)), kd(RGBColor(0.5, 0.5, 0.5)) {}
+Matte::Matte(RGBColor ka, RGBColor kd) : ka(ka), kd(kd) {}
 
-// For now, I am ignoring global illumination and the directional aspect
-// of the shading calculation. These will need to wait for more classes 
-// in order to be implemented.
-RGBColor Matte::shade(const HitRecord& hr, const std::vector<Light*>& lv) {
-    // return pixel radiance value:
-    RGBColor rad;
-    for (auto i = 0; i < lv.size(); i++) {
-        rad += kd * lv[i] -> color;
-    }
-    rad = maxToOne(rad);
+RGBColor Matte::shade(const HitRecord& hr, const Light& light) {
+    Vector3 ptl = light.ptlDir(hr);
+
+    RGBColor rad { kd * std::max(static_cast<float>(0.0), (dot(normalize(hr.sn), normalize(ptl)))) };
     return rad;
 }
 } // namespace RT
