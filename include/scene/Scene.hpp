@@ -13,12 +13,16 @@ class Light;
 class Shape;
 class Film;
 class Camera;
+class HitRecord;
 
 class Scene {
 public:
     Scene() = default;
     // Initializes the scene and sets it up to render an image.
     void init();
+    void renderScene();
+    HitRecord* getNearestIntersection();
+    void shade(const HitRecord&);
 private:
     std::vector<std::unique_ptr<Light>> lightContainer;
     std::vector<std::unique_ptr<Shape>> shapeContainer;
