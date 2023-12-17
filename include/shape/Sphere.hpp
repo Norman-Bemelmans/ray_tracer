@@ -13,7 +13,7 @@ class Sphere : public RT::Shape {
     friend void test_ctor();
 public:
     Sphere(Point3 p, float r, Material* mat);
-    bool hit(Ray r, HitRecord* hitRecord);
+    bool hit(Ray r, HitRecord* hitRecord) override;
 private:
     Point3 center;
     float radius;
