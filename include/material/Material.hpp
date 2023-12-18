@@ -12,10 +12,12 @@
 
 namespace RT {
 class HitRecord;
+class Point3;
+class Normal;
 
 class Material {
-protected:
-    virtual RGBColor shade(const HitRecord& hr,  const Light& light) = 0;
+public:
+    virtual RGBColor shade(const Point3& hitPoint, const Normal& normal, const Light* light) = 0;
 };
 } // namespace RT
 

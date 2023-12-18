@@ -12,6 +12,9 @@
 #include <vector>
 
 namespace RT {
+class Normal;
+class Point3;
+
 class Matte : public Material {
     friend void test_def_ctor();
     friend void test_ctor();
@@ -23,7 +26,7 @@ public:
     // the diffuse color as parameters:
     Matte(RGBColor ka, RGBColor kd);
 
-    RGBColor shade(const HitRecord& hr, const Light& light) override;
+    RGBColor shade(const Point3& hitPoint, const Normal& normal, const Light* light) override;
 private:
     // ambient reflection coefficient:
     RGBColor ka;
