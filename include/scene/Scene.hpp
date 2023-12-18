@@ -5,14 +5,15 @@
 #ifndef SCENE_HPP
 #define SCENE_HPP
 
+#include "Light.hpp"
+#include "Shape.hpp"
+
 #include <memory>
 #include <vector>
 
 namespace RT {
-class Light;
-class Shape;
 class Film;
-class Camera;
+class Pinhole;
 class HitRecord;
 
 class Scene {
@@ -28,7 +29,7 @@ private:
     std::vector<std::unique_ptr<Light>> lightContainer;
     std::vector<std::unique_ptr<Shape>> shapeContainer;
     Film* pFilm;
-    Camera* pCamera;
+    Pinhole* pCamera;
 };
 } // namespace RT
 
