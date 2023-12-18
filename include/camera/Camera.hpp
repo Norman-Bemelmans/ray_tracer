@@ -19,6 +19,8 @@ public:
     virtual ~Camera();
     virtual Ray createRay(int u, int v) = 0;
 
+    // camera-to-world transform.
+    const Transform cameraToWorld;
 protected:
     // eye-point is  the camera origin.
     Point3 ep;
@@ -30,9 +32,6 @@ protected:
     // foc_len is the focal length: the distance between the eye_point and
     // the image plane.
     float focLen;
-
-    // camera-to-world transform.
-    Transform c2w;
 };
 } // namespace RT
 
