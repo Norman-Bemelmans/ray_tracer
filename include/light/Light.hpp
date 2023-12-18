@@ -8,6 +8,8 @@
 #include "HitRecord.hpp"
 
 namespace RT {
+class Point3;
+
 class Light {
     friend void test_def_ctor();
     friend void test_ctor();
@@ -18,7 +20,7 @@ public:
     virtual ~Light();
 
     // point-to-light direction:
-    virtual Vector3 ptlDir(const HitRecord& hr) const = 0;
+    virtual Vector3 ptlDir(const Point3& point) const = 0;
 };
 } // namespace RT
 
