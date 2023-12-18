@@ -7,7 +7,7 @@ Core modules:
 - Material
 - BRDF
 - Light
-- World
+- Scene
 - HitRecord
 - RGBColor
 - Film
@@ -65,13 +65,11 @@ at first unless its absence turns out to be unattractive. Only point
 lights just now, though I will support area lights later. Like the Shape class, 
 lights contain a pointer to the  transforms which situate it in world space.
 
-World:
-World is the data structure that contains all elements of the scene: the camera,
-the shapes, the lights, transformations, and the film. The shapes, transformations, 
-and lights are each stored in a vector of pointers. The World also
-contains an initialized camera instance and an instance of the film class, the latter
-of which stores the pixel values as a C-style array of RGBColors. For now, the world
-instance is initialized from a formatted text file.
+Scene:
+Scene is the data structure that contains all elements of the scene: the camera,
+the shapes, the lights, and the film. The shapes and lights are each stored in a vector of 
+pointers. The Scene also contains an initialized camera instance and an instance of the film 
+class, the latter of which stores the pixel color values as a std::vector of RGBColors. 
 
 HitRecord:
 This utility class carries information between the subsystems of the ray tracer.
