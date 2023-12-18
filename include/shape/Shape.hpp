@@ -13,10 +13,8 @@ public:
     virtual ~Shape() = 0;
 protected:
     Shape(Material* mat);
-
-    virtual bool hit(Ray r, HitRecord* hitRecord) = 0;
-private:
     Material* material;
+    virtual bool hit(Ray r, HitRecord* hitRecord) = 0;
 };
 } // namespace RT
 
