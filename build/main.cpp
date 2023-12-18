@@ -4,7 +4,8 @@
 
 int main() {
     using namespace RT;
-    init();
-    renderScene();
+    Scene scene;
+    scene.init();
+    scene.renderScene();
     return 0;
 }
