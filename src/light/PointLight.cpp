@@ -10,7 +10,7 @@ namespace RT {
 PointLight::PointLight() : Light(), loc(0.0, 0.0, 0.0) {}
 PointLight::PointLight(RGBColor color_init, Point3 loc_init) : Light(color_init), loc(loc_init) {}
 
-Vector3 PointLight::ptlDir(const HitRecord& hr) const {
-    return Vector3(loc - hr.hp);
+Vector3 PointLight::ptlDir(const Point3& point) const {
+    return Vector3(loc - point);
 }
 } // namespace RT
