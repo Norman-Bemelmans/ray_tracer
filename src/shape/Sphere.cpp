@@ -31,6 +31,7 @@ bool Sphere::hit(Ray r, HitRecord* hitRecord) {
         r = inverse(worldToShape) * r;
         hitRecord->hp = r.o + smallerRoot*r.d;
         hitRecord->sn = normalize(Normal((r.o + smallerRoot*r.d) - this->center));
+        hitRecord->mat = this->material;
         return true;
     }
 }
