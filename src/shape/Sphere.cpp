@@ -7,7 +7,7 @@
 #include <algorithm>
 
 namespace RT {
-Sphere::Sphere(Point3 p, float rad, Material* mat) : Shape(mat), center(p), radius(rad),
+Sphere::Sphere(Point3 p, float rad, Material* mat) : center(p), radius(rad), Shape(mat), 
                                       worldToShape(1.0, 0.0, 0.0, -center.x,
                                                    0.0, 1.0, 0.0, -center.y,
                                                    0.0, 0.0, 1.0, -center.z,

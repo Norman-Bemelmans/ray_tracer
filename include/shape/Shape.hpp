@@ -11,10 +11,10 @@ namespace RT {
 class Shape {
 public:
     virtual ~Shape() = 0;
+    virtual bool hit(Ray r, HitRecord* hitRecord) = 0;
 protected:
     Shape(Material* mat);
-    Material* material;
-    virtual bool hit(Ray r, HitRecord* hitRecord) = 0;
+    Material* material;   
 };
 } // namespace RT
 
