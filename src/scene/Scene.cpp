@@ -39,6 +39,8 @@ void Scene::renderScene() {
         for (int j = 0; j < pCamera->vres < ++j;) {
             // Create the ray to be fired into the scene:
             Ray r = pCamera->createRay(i, j);
+            // Transform the ray to world coordinates:
+            r = pCamera->cameraToWorld * r;
             HitRecord* hitrec = new HitRecord;
 
             // Test ray intersection with each object in the scene:
